@@ -45,7 +45,6 @@ const translations = {
       history: "History",
       gallery: "Gallery",
       map: "Map of Ramaul",
-      // universities: "Top 10 Universities in the World (QS World University Rankings 2026)", // Removed if not needed
       after12_main: "Undergraduate Programs After 12th",
       science_stream: "Science Stream",
       commerce_stream: "Commerce Stream",
@@ -53,13 +52,13 @@ const translations = {
       arts_stream: "Arts & Humanities Stream",
       graduate_programs_main: "Graduate Programs (Postgraduate)",
       emerging_careers_main: "Emerging Careers & Their Use",
+      universities_nepal: "Nepal Universities - Programs, Criteria & Addresses", // NEW HEADING
       admission_info_main: "Admission Information", // Main Admission section heading
       residency_admission_sub: "Residency Admission in the USA", // SUB-HEADING directly under Admission Info
-      mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)", // NEW MBBS Admission Sub-heading
-      // NEW: Engineering Admission Sub-heading
+      mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)",
       engineering_admission_nepal_sub:
         "Engineering Admission Process in Nepal (Bachelor's Level)",
-      faq_main: "Frequently Asked Questions (FAQs)", // NEW FAQ Main Heading
+      faq_main: "Frequently Asked Questions (FAQs)",
     },
     intro: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
@@ -70,11 +69,6 @@ const translations = {
     ],
     history: [
       "Previously part of the Village Development Committee, Ramaul now falls under Siraha Municipality Wards 3, 4, and 5. It has a rich tradition of Islamic education with six madrasahs, ten mosques, and both government and private schools. The Kamala River flowing nearby adds to its scenic and strategic significance.",
-    ],
-    universities_list: [
-      // If you decide to re-add universities later, this data is here
-      // { name: "Massachusetts Institute of Technology (MIT)", details: [...] },
-      // ... (rest of university data) ...
     ],
     after12_programs: {
       science: [
@@ -249,6 +243,128 @@ const translations = {
           "Evaluates environmental impact; guides eco-friendly business decisions",
       },
     ],
+    universities_nepal_list: [
+      // Data from image_18ad40.png and image_18aa36.png
+      {
+        "University Name": "Tribhuvan University (TU)",
+        "Undergraduate Programs": "BSc CSIT, BCA, BBS, BBA, BE, MBBS, BEd, BA",
+        "Postgraduate Programs": "MSc, MBA, MPA, MEd, MTech, MPH",
+        "Doctorate Programs":
+          "PhD in Botany, Gender Studies, Neurosurgery, Management",
+        "Admission Criteria":
+          "10+2 with ≥45–50%; entrance for technical/medical; Master's for PhD",
+      },
+      {
+        "University Name": "Kathmandu University (KU)",
+        "Undergraduate Programs": "BTech, BSc CS, BBA, MBBS, BPharm, BE",
+        "Postgraduate Programs": "MSc, MBA, MPharm, MTech, MPH",
+        "Doctorate Programs":
+          "PhD in Management, Neurology, Urology, Cardiology",
+        "Admission Criteria":
+          "10+2 Science with ≥50%; KUCAT entrance; Master's for PhD",
+      },
+      {
+        "University Name": "Pokhara University",
+        "Undergraduate Programs": "BBA, BE, BCSIT, BHM, BSc Nursing",
+        "Postgraduate Programs": "MBA, MSc, MPH, MEd",
+        "Doctorate Programs": "PhD in Management, Engineering (limited)",
+        "Admission Criteria":
+          "10+2 with ≥45%; entrance exam and merit-based selection",
+      },
+      {
+        "University Name": "Purbanchal University",
+        "Undergraduate Programs": "BE, BBA, BSc Nursing, BPharm, BEd",
+        "Postgraduate Programs": "MBA, MSc, MEd",
+        "Doctorate Programs": "PhD in Education, Management",
+        "Admission Criteria":
+          "10+2 Science/Management; entrance for technical; Master's for PhD",
+      },
+      {
+        "University Name": "Agriculture and Forestry University",
+        "Undergraduate Programs": "BSc Agriculture, BSc Forestry, BVSc & AH",
+        "Postgraduate Programs": "MSc Agriculture, MSc Forestry",
+        "Doctorate Programs": "PhD in Forestry, Agriculture",
+        "Admission Criteria":
+          "10+2 Science (Biology); entrance exam; Master's for PhD",
+      },
+      {
+        "University Name": "Far Western University",
+        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
+        "Postgraduate Programs": "MSc, MBA, MA, MEd",
+        "Doctorate Programs": "PhD in Humanities, Education",
+        "Admission Criteria":
+          "10+2 or equivalent; entrance for technical; Master's for PhD",
+      },
+      {
+        "University Name": "Mid Western University",
+        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
+        "Postgraduate Programs": "MSc, MBA, MA, MEd",
+        "Doctorate Programs": "PhD in Social Sciences, Education",
+        "Admission Criteria":
+          "10+2 or equivalent; entrance for technical; Master's for PhD",
+      },
+      {
+        "University Name": "Lumbini Buddhist University",
+        "Undergraduate Programs": "BA in Buddhist Studies",
+        "Postgraduate Programs": "MA in Buddhist Philosophy",
+        "Doctorate Programs": "PhD in Buddhist Philosophy, Culture",
+        "Admission Criteria":
+          "10+2 for BA; Bachelor's for MA; Master's for PhD",
+      },
+      {
+        "University Name": "Nepal Sanskrit University",
+        "Undergraduate Programs": "BA Sanskrit, Acharya",
+        "Postgraduate Programs": "MA Sanskrit",
+        "Doctorate Programs": "PhD in Sanskrit Literature, Philosophy",
+        "Admission Criteria":
+          "10+2 or equivalent; Sanskrit background preferred",
+      },
+      {
+        "University Name": "Rajarshi Janak University",
+        "Undergraduate Programs": "BBA, BEd, BA",
+        "Postgraduate Programs": "MBA, MA",
+        "Doctorate Programs": "PhD in Education, Management",
+        "Admission Criteria": "10+2 or equivalent; Master's for PhD",
+      },
+      {
+        "University Name": "Madan Bhandari University of Science & Tech",
+        "Undergraduate Programs": "BSc IT, BE Computer, BTech AI & Robotics",
+        "Postgraduate Programs": "MSc AI, MSc Robotics",
+        "Doctorate Programs": "PhD in Forest Biomaterials Science",
+        "Admission Criteria": "10+2 Science; entrance exam; Master's for PhD",
+      },
+      {
+        "University Name": "Madhesh Agricultural University",
+        "Undergraduate Programs": "BSc Agriculture, BSc Horticulture",
+        "Postgraduate Programs": "MSc Agriculture",
+        "Doctorate Programs": "PhD in Agricultural Sciences",
+        "Admission Criteria":
+          "10+2 Science (Biology); entrance exam; Master's for PhD",
+      },
+      {
+        "University Name": "Lumbini Technological University",
+        "Undergraduate Programs": "BSc IT, BE Civil, BBA",
+        "Postgraduate Programs": "MBA, MSc",
+        "Doctorate Programs": "PhD in Technology, Management",
+        "Admission Criteria":
+          "10+2 Science/Management; entrance for technical; Master's for PhD",
+      },
+      {
+        "University Name": "Manmohan Technical University",
+        "Undergraduate Programs": "BE Civil, BSc Computer, BSc IT",
+        "Postgraduate Programs": "MSc Engineering, MBA",
+        "Doctorate Programs": "PhD in Engineering, IT",
+        "Admission Criteria": "10+2 Science; entrance exam; Master's for PhD",
+      },
+      {
+        "University Name": "Nepal Open University (NOU)",
+        "Undergraduate Programs": "BEd, BBA, BA (Distance Mode)",
+        "Postgraduate Programs": "MEd, MBA, MA (Distance Mode)",
+        "Doctorate Programs": "PhD in Education, Management (Distance Mode)",
+        "Admission Criteria":
+          "Open/Distance format; 10+2 for UG; Bachelor's for PG;",
+      },
+    ],
     residency_admission_list: [
       {
         step: "1. Graduate from a Recognized Medical School",
@@ -311,7 +427,6 @@ const translations = {
       },
     ],
     mbbs_admission_nepal_list: [
-      // NEW MBBS Admission Data
       {
         step: "1. Meet Eligibility Criteria",
         description:
@@ -358,7 +473,6 @@ const translations = {
         notes: "Duration: 5.5 years (including 1-year internship)",
       },
     ],
-    // NEW: Engineering Admission Nepal Data
     engineering_admission_nepal_list: [
       {
         step: "1. Meet Eligibility Criteria",
@@ -411,7 +525,6 @@ const translations = {
         notes: "Duration: 4 years (8 semesters)",
       },
     ],
-    // NEW: FAQ data
     faq: {
       mbbs: {
         q1: "Is NEET-UG mandatory for MBBS admission in Nepal for Indian students?",
@@ -436,7 +549,6 @@ const translations = {
       history: "इतिहास",
       gallery: "ग्यालरी",
       map: "रमौल को नक्सा",
-      // universities: "विश्वका शीर्ष १० विश्वविद्यालयहरू (QS वर्ल्ड युनिभर्सिटी र्याङ्किङ्ग्स २०२६)", // Removed if not needed
       after12_main: "१२ कक्षा पछि स्नातक कार्यक्रमहरू",
       science_stream: "विज्ञान संकाय",
       commerce_stream: "वाणिज्य संकाय",
@@ -444,14 +556,15 @@ const translations = {
       arts_stream: "कला र मानविकी संकाय",
       graduate_programs_main: "स्नातकोत्तर कार्यक्रमहरू",
       emerging_careers_main: "उभरदो करियर र तिनीहरूको प्रयोग",
+      universities_nepal:
+        "नेपालका विश्वविद्यालयहरू - कार्यक्रम, मापदण्ड र ठेगानाहरू", // NEW HEADING (Nepali)
       admission_info_main: "प्रवेश जानकारी",
       residency_admission_sub:
         "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
-      mbbs_admission_nepal_sub: "नेपालमा MBBS भर्ना प्रक्रिया (२०२५–२६)", // NEW MBBS Admission Sub-heading
-      // NEW: Engineering Admission Sub-heading (Nepali)
+      mbbs_admission_nepal_sub: "नेपालमा MBBS भर्ना प्रक्रिया (२०२५–२६)",
       engineering_admission_nepal_sub:
         "नेपालमा इन्जिनियरिङ भर्ना प्रक्रिया (ब्याचलर स्तर)",
-      faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)", // NEW FAQ Main Heading (Nepali)
+      faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)",
     },
     intro: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
@@ -463,7 +576,6 @@ const translations = {
     history: [
       "पहिले गाउँ विकास समिति अन्तर्गत पर्ने रमौल अहिले सिराहा नगरपालिका वार्ड ३, ४, र ५ मा पर्दछ। यसमा इस्लामिक शिक्षाको समृद्ध परम्परा छ, जसमा छवटा मदरसा, दश मस्जिद, र सरकारी तथा निजी विद्यालयहरू छन्। नजिकै बग्ने कमला नदीले यसको रमणीय र रणनीतिक महत्त्व बढाउँछ।",
     ],
-    // universities_list: [], // Removed if not needed
     after12_programs: {
       science: [
         {
@@ -641,6 +753,129 @@ const translations = {
           "वातावरणीय प्रभावको मूल्याङ्कन गर्दछ; पर्यावरण-मैत्री व्यवसायिक निर्णयहरू मार्गदर्शन गर्दछ।",
       },
     ],
+    universities_nepal_list: [
+      // Data from image_18ad40.png and image_18aa36.png (Nepali translations for fields/programs would go here if available)
+      {
+        "University Name": "त्रिभुवन विश्वविद्यालय (TU)",
+        "Undergraduate Programs": "BSc CSIT, BCA, BBS, BBA, BE, MBBS, BEd, BA",
+        "Postgraduate Programs": "MSc, MBA, MPA, MEd, MTech, MPH",
+        "Doctorate Programs":
+          "PhD in Botany, Gender Studies, Neurosurgery, Management",
+        "Admission Criteria":
+          "१०+२ ≥४५–५०% सहित; प्राविधिक/चिकित्साको लागि प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "काठमाडौं विश्वविद्यालय (KU)",
+        "Undergraduate Programs": "BTech, BSc CS, BBA, MBBS, BPharm, BE",
+        "Postgraduate Programs": "MSc, MBA, MPharm, MTech, MPH",
+        "Doctorate Programs":
+          "PhD in Management, Neurology, Urology, Cardiology",
+        "Admission Criteria":
+          "१०+२ विज्ञान ≥५०% सहित; KUCAT प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "पोखरा विश्वविद्यालय",
+        "Undergraduate Programs": "BBA, BE, BCSIT, BHM, BSc Nursing",
+        "Postgraduate Programs": "MBA, MSc, MPH, MEd",
+        "Doctorate Programs": "PhD in Management, Engineering (limited)",
+        "Admission Criteria":
+          "१०+२ ≥४५% सहित; प्रवेश परीक्षा र योग्यता-आधारित छनोट",
+      },
+      {
+        "University Name": "पूर्वाञ्चल विश्वविद्यालय",
+        "Undergraduate Programs": "BE, BBA, BSc Nursing, BPharm, BEd",
+        "Postgraduate Programs": "MBA, MSc, MEd",
+        "Doctorate Programs": "PhD in Education, Management",
+        "Admission Criteria":
+          "१०+२ विज्ञान/व्यवस्थापन; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "कृषि तथा वन विश्वविद्यालय",
+        "Undergraduate Programs": "BSc Agriculture, BSc Forestry, BVSc & AH",
+        "Postgraduate Programs": "MSc Agriculture, MSc Forestry",
+        "Doctorate Programs": "PhD in Forestry, Agriculture",
+        "Admission Criteria":
+          "१०+२ विज्ञान (जीवविज्ञान); प्रवेश परीक्षा; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "सुदूरपश्चिमाञ्चल विश्वविद्यालय",
+        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
+        "Postgraduate Programs": "MSc, MBA, MA, MEd",
+        "Doctorate Programs": "PhD in Humanities, Education",
+        "Admission Criteria":
+          "१०+२ वा सो सरह; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "मध्यपश्चिमाञ्चल विश्वविद्यालय",
+        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
+        "Postgraduate Programs": "MSc, MBA, MA, MEd",
+        "Doctorate Programs": "PhD in Social Sciences, Education",
+        "Admission Criteria":
+          "१०+२ वा सो सरह; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "लुम्बिनी बौद्ध विश्वविद्यालय",
+        "Undergraduate Programs": "BA in Buddhist Studies",
+        "Postgraduate Programs": "MA in Buddhist Philosophy",
+        "Doctorate Programs": "PhD in Buddhist Philosophy, Culture",
+        "Admission Criteria":
+          "BA को लागि १०+२; MA को लागि स्नातक; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "नेपाल संस्कृत विश्वविद्यालय",
+        "Undergraduate Programs": "BA Sanskrit, आचार्य",
+        "Postgraduate Programs": "MA Sanskrit",
+        "Doctorate Programs": "PhD in Sanskrit Literature, Philosophy",
+        "Admission Criteria": "१०+२ वा सो सरह; संस्कृत पृष्ठभूमि रुचाइएको",
+      },
+      {
+        "University Name": "राजर्षि जनक विश्वविद्यालय",
+        "Undergraduate Programs": "BBA, BEd, BA",
+        "Postgraduate Programs": "MBA, MA",
+        "Doctorate Programs": "PhD in Education, Management",
+        "Admission Criteria": "१०+२ वा सो सरह; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "मदन भण्डारी विज्ञान तथा प्रविधि विश्वविद्यालय",
+        "Undergraduate Programs": "BSc IT, BE Computer, BTech AI & Robotics",
+        "Postgraduate Programs": "MSc AI, MSc Robotics",
+        "Doctorate Programs": "PhD in Forest Biomaterials Science",
+        "Admission Criteria":
+          "१०+२ विज्ञान; प्रवेश परीक्षा; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "मधेस कृषि विश्वविद्यालय",
+        "Undergraduate Programs": "BSc Agriculture, BSc Horticulture",
+        "Postgraduate Programs": "MSc Agriculture",
+        "Doctorate Programs": "PhD in Agricultural Sciences",
+        "Admission Criteria":
+          "१०+२ विज्ञान (जीवविज्ञान); प्रवेश परीक्षा; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "लुम्बिनी प्राविधिक विश्वविद्यालय",
+        "Undergraduate Programs": "BSc IT, BE Civil, BBA",
+        "Postgraduate Programs": "MBA, MSc",
+        "Doctorate Programs": "PhD in Technology, Management",
+        "Admission Criteria":
+          "१०+२ विज्ञान/व्यवस्थापन; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "मनमोहन प्राविधिक विश्वविद्यालय",
+        "Undergraduate Programs": "BE Civil, BSc Computer, BSc IT",
+        "Postgraduate Programs": "MSc Engineering, MBA",
+        "Doctorate Programs": "PhD in Engineering, IT",
+        "Admission Criteria":
+          "१०+२ विज्ञान; प्रवेश परीक्षा; PhD को लागि मास्टर",
+      },
+      {
+        "University Name": "नेपाल खुला विश्वविद्यालय (NOU)",
+        "Undergraduate Programs": "BEd, BBA, BA (दूरी मोड)",
+        "Postgraduate Programs": "MEd, MBA, MA (दूरी मोड)",
+        "Doctorate Programs": "PhD in Education, Management (दूरी मोड)",
+        "Admission Criteria":
+          "खुला/दूरी ढाँचा; UG को लागि १०+२; PG को लागि स्नातक;",
+      },
+    ],
     residency_admission_list: [
       {
         step: "1. Graduate from a Recognized Medical School",
@@ -703,7 +938,6 @@ const translations = {
       },
     ],
     mbbs_admission_nepal_list: [
-      // NEW MBBS Admission Data
       {
         step: "1. Meet Eligibility Criteria",
         description:
@@ -750,62 +984,58 @@ const translations = {
         notes: "Duration: 5.5 years (including 1-year internship)",
       },
     ],
-    // NEW: Engineering Admission Nepal Data (Nepali)
     engineering_admission_nepal_list: [
       {
-        step: "1. योग्यता मापदण्ड पूरा गर्नुहोस्",
+        step: "1. Meet Eligibility Criteria",
         description:
-          "न्यूनतम ४५–५०% अंकका साथ १०+२ विज्ञान (PCM) वा सो सरहको शिक्षा पूरा गर्नुहोस्।",
-        notes: "आवश्यक विषयहरू: भौतिक विज्ञान, रसायन विज्ञान, गणित",
+          "Complete 10+2 Science (PCM) or equivalent with minimum 45–50% marks",
+        notes: "Required subjects: Physics, Chemistry, Mathematics",
       },
       {
-        step: "2. विश्वविद्यालय छनौट गर्नुहोस्",
+        step: "2. Choose University",
         description:
-          "विकल्पहरूमा त्रिभुवन विश्वविद्यालय (IOE), काठमाडौं विश्वविद्यालय (KU), पोखरा विश्वविद्यालय, पूर्वाञ्चल विश्वविद्यालय समावेश छन्।",
-        notes: "प्रत्येकको आफ्नै प्रवेश र भर्ना प्रणाली छ।",
+          "Options include Tribhuvan University (IOE), Kathmandu University (KU), Pokhara University, Purbanchal University",
+        notes: "Each has its own entrance and intake system",
       },
       {
-        step: "3. प्रवेश परीक्षाको लागि दर्ता गर्नुहोस्",
+        step: "3. Register for Entrance Exam",
+        description: "Apply for IOE Entrance (Tribhuvan) or KUCAT (Kathmandu)",
+        notes: "Online registration via university portals",
+      },
+      {
+        step: "4. Pay Application Fee",
         description:
-          "IOE प्रवेश (त्रिभुवन) वा KUCAT (काठमाडौं) को लागि आवेदन दिनुहोस्।",
-        notes: "विश्वविद्यालय पोर्टल मार्फत अनलाइन दर्ता।",
+          "Typically NPR 1,500–2,000 via bank or digital wallets (eSewa, Khalti, ConnectIPS)",
+        notes: "Keep transaction ID or voucher for upload",
       },
       {
-        step: "4. आवेदन शुल्क तिर्नुहोस्",
+        step: "5. Upload Documents",
+        description: "+2 transcript, photo, citizenship/passport, signature",
+        notes: "Format and size requirements vary by university",
+      },
+      {
+        step: "6. Take Entrance Exam",
         description:
-          "सामान्यतया बैंक वा डिजिटल वालेट (ईसेवा, खल्ती, कनेक्टआईपीएस) मार्फत NPR १,५००–२,०००।",
-        notes: "अपलोडका लागि लेनदेन ID वा भौचर राख्नुहोस्।",
+          "Computer-based test covering Physics, Chemistry, Mathematics, English",
+        notes: "Held at designated centers like Pulchowk Campus (IOE)",
       },
       {
-        step: "5. कागजातहरू अपलोड गर्नुहोस्",
-        description: "+२ ट्रान्सक्रिप्ट, फोटो, नागरिकता/राहदानी, हस्ताक्षर।",
-        notes: "ढाँचा र आकार आवश्यकताहरू विश्वविद्यालय अनुसार फरक हुन्छन्।",
-      },
-      {
-        step: "6. प्रवेश परीक्षा दिनुहोस्",
+        step: "7. Attend Counseling / Merit Allocation",
         description:
-          "भौतिक विज्ञान, रसायन विज्ञान, गणित, अंग्रेजी कभर गर्ने कम्प्युटर-आधारित परीक्षा।",
-        notes:
-          "पुलचोक क्याम्पस (IOE) जस्ता तोकिएका केन्द्रहरूमा आयोजना गरिन्छ।",
+          "Based on entrance rank, choose preferred college and program",
+        notes: "Includes Civil, Computer, Electrical, Mechanical, etc.",
       },
       {
-        step: "7. काउन्सिलिङ / योग्यता विनियोजनमा सहभागी हुनुहोस्",
-        description:
-          "प्रवेश परीक्षाको नतिजाको आधारमा, मनपर्ने कलेज र कार्यक्रम छनौट गर्नुहोस्।",
-        notes: "सिभिल, कम्प्युटर, इलेक्ट्रिकल, मेकानिकल, आदि समावेश छन्।",
+        step: "8. Confirm Admission",
+        description: "Submit documents and pay initial fees",
+        notes: "Receive official admission letter",
       },
       {
-        step: "8. भर्ना पुष्टि गर्नुहोस्",
-        description: "कागजातहरू बुझाउनुहोस् र प्रारम्भिक शुल्क तिर्नुहोस्।",
-        notes: "विश्वविद्यालयबाट आधिकारिक भर्ना पत्र प्राप्त गर्नुहोस्।",
-      },
-      {
-        step: "9. शैक्षिक सत्र सुरु गर्नुहोस्",
-        description: "कक्षा सामान्यतया अगस्त–सेप्टेम्बरमा सुरु हुन्छ।",
-        notes: "अवधि: ४ वर्ष (८ सेमेस्टर)",
+        step: "9. Begin Academic Session",
+        description: "Classes typically start in August–September",
+        notes: "Duration: 4 years (8 semesters)",
       },
     ],
-    // NEW: FAQ data (Nepali)
     faq: {
       mbbs: {
         q1: "भारतीय विद्यार्थीहरूको लागि नेपालमा एमबीबीएस भर्नाको लागि NEET-UG अनिवार्य छ?",
@@ -898,6 +1128,15 @@ function setLanguage(lang) {
     emergingCareersMainHeading.textContent =
       translations[lang].headings.emerging_careers_main;
 
+  // NEW: Heading for Universities in Nepal section
+  const universitiesNepalHeading = document.getElementById(
+    "universities-nepal-heading"
+  );
+  if (universitiesNepalHeading) {
+    universitiesNepalHeading.textContent =
+      translations[lang].headings.universities_nepal;
+  }
+
   // Heading for Admission Information section
   const admissionInfoMainHeading = document.getElementById(
     "admission-info-main-heading"
@@ -914,7 +1153,7 @@ function setLanguage(lang) {
     residencyAdmissionSubHeading.textContent =
       translations[lang].headings.residency_admission_sub;
 
-  // NEW: Sub-heading for MBBS Admission Nepal
+  // Sub-heading for MBBS Admission Nepal
   const mbbsAdmissionNepalSubHeading = document.getElementById(
     "mbbs-admission-nepal-sub-heading"
   );
@@ -922,7 +1161,7 @@ function setLanguage(lang) {
     mbbsAdmissionNepalSubHeading.textContent =
       translations[lang].headings.mbbs_admission_nepal_sub;
 
-  // NEW: Sub-heading for Engineering Admission Nepal
+  // Sub-heading for Engineering Admission Nepal
   const engineeringAdmissionNepalSubHeading = document.getElementById(
     "engineering-admission-nepal-sub-heading"
   );
@@ -930,7 +1169,7 @@ function setLanguage(lang) {
     engineeringAdmissionNepalSubHeading.textContent =
       translations[lang].headings.engineering_admission_nepal_sub;
 
-  // NEW: Main FAQ Heading
+  // Main FAQ Heading
   const faqMainHeading = document.getElementById("faq-main-heading");
   if (faqMainHeading) {
     faqMainHeading.textContent = translations[lang].headings.faq_main;
@@ -985,6 +1224,13 @@ function setLanguage(lang) {
     lang
   );
 
+  // NEW: Populate Universities in Nepal table
+  populateUniversitiesNepalTable(
+    "universities-nepal-table-container",
+    translations[lang].universities_nepal_list,
+    lang
+  );
+
   // Populate Residency Admission table
   populateResidencyAdmissionTable(
     "residency-table-container",
@@ -992,21 +1238,21 @@ function setLanguage(lang) {
     lang
   );
 
-  // NEW: Populate MBBS Admission Nepal table
+  // Populate MBBS Admission Nepal table
   populateMBBSAdmissionNepalTable(
     "mbbs-admission-nepal-table-container",
     translations[lang].mbbs_admission_nepal_list,
     lang
   );
 
-  // NEW: Populate Engineering Admission Nepal table
+  // Populate Engineering Admission Nepal table
   populateEngineeringAdmissionNepalTable(
     "engineering-admission-nepal-table-container",
     translations[lang].engineering_admission_nepal_list,
     lang
   );
 
-  // NEW: Populate FAQ section
+  // Populate FAQ section
   const faqMbbsQ1Heading = document.getElementById("faq-mbbs-q1-heading");
   if (faqMbbsQ1Heading)
     faqMbbsQ1Heading.textContent = translations[lang].faq.mbbs.q1;
@@ -1078,6 +1324,20 @@ function populateProgramsTable(containerId, data, lang) {
     step: { en: "Step", np: "चरण" },
     description: { en: "Description", np: "विवरण" },
     notes: { en: "Notes", np: "नोटहरू" },
+    "University Name": { en: "University Name", np: "विश्वविद्यालयको नाम" },
+    "Undergraduate Programs": {
+      en: "Undergraduate Programs",
+      np: "स्नातक कार्यक्रमहरू",
+    },
+    "Postgraduate Programs": {
+      en: "Postgraduate Programs",
+      np: "स्नातकोत्तर कार्यक्रमहरू",
+    },
+    "Doctorate Programs": {
+      en: "Doctorate Programs",
+      np: "विद्यावारिधि कार्यक्रमहरू",
+    },
+    "Admission Criteria": { en: "Admission Criteria", np: "भर्ना मापदण्ड" },
   };
 
   // Create table header
@@ -1124,6 +1384,14 @@ function populateEmergingCareersTable(containerId, data, lang) {
   );
 }
 
+// NEW: Function to populate Universities in Nepal table (reusing populateProgramsTable)
+function populateUniversitiesNepalTable(containerId, data, lang) {
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `Universities in Nepal table populated for ${containerId} (via generic).`
+  );
+}
+
 // Function for Residency Admission table (uses generic populateProgramsTable)
 function populateResidencyAdmissionTable(containerId, data, lang) {
   populateProgramsTable(containerId, data, lang);
@@ -1132,7 +1400,7 @@ function populateResidencyAdmissionTable(containerId, data, lang) {
   );
 }
 
-// NEW: Function for MBBS Admission Nepal table (uses generic populateProgramsTable)
+// Function for MBBS Admission Nepal table (uses generic populateProgramsTable)
 function populateMBBSAdmissionNepalTable(containerId, data, lang) {
   populateProgramsTable(containerId, data, lang);
   console.log(
@@ -1140,7 +1408,7 @@ function populateMBBSAdmissionNepalTable(containerId, data, lang) {
   );
 }
 
-// NEW: Function for Engineering Admission Nepal table (uses generic populateProgramsTable)
+// Function for Engineering Admission Nepal table (uses generic populateProgramsTable)
 function populateEngineeringAdmissionNepalTable(containerId, data, lang) {
   populateProgramsTable(containerId, data, lang);
   console.log(
