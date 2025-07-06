@@ -113,3 +113,121 @@ footer {
     font-weight: bold;
     border-bottom: 1px solid #ccc;
 }
+
+/* Add to your existing styles.css */
+
+.programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    /* Space after tables */
+}
+
+.programs-table th,
+.programs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.programs-table th {
+    background-color: #763626;
+    /* Darker header background */
+    color: white;
+    font-weight: bold;
+}
+
+.programs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.programs-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.program-stream h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #763626;
+    /* Match header color */
+}
+/* Add to your existing styles.css */
+
+.programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    /* Space after tables */
+}
+
+.programs-table th,
+.programs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.programs-table th {
+    background-color: #763626;
+    /* Darker header background */
+    color: white;
+    font-weight: bold;
+}
+
+.programs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.programs-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.program-stream h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #763626;
+    /* Match header color */
+}
+/* Add to your existing styles.css */
+
+.programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    /* Space after tables */
+}
+
+.programs-table th,
+.programs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.programs-table th {
+    background-color: #763626;
+    /* Darker header background */
+    color: white;
+    font-weight: bold;
+}
+
+.programs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.programs-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.program-stream h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #763626;
+    /* Match header color */
+}
