@@ -231,3 +231,133 @@ footer {
     color: #763626;
     /* Match header color */
 }
+/* Add to your existing styles.css */
+
+.programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    /* Space after tables */
+}
+
+.programs-table th,
+.programs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.programs-table th {
+    background-color: #763626;
+    /* Darker header background */
+    color: white;
+    font-weight: bold;
+}
+
+.programs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.programs-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.program-stream h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #763626;
+    /* Match header color */
+}
+
+/* Add to your existing styles.css */
+
+.admission-tabs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    /* Arrange buttons side-by-side */
+    gap: 5px;
+    /* Space between buttons */
+}
+
+.admission-tab-button {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    /* Make it look like a tab */
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.admission-tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.admission-tab-button.active {
+    background-color: #fff;
+    /* Active tab is white to blend with content area */
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    /* Hide bottom border to merge with content */
+    color: #763626;
+    /* Highlight active tab text */
+}
+
+#admission-content-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: -1px;
+    /* Overlap with tab border for seamless look */
+    background-color: #fff;
+    min-height: 200px;
+    /* Give it some minimum height */
+}
+
+/* Ensure table styling still applies within this container */
+#admission-content-container .programs-table {
+    margin-top: 0;
+    /* Remove top margin if it conflicts with padding */
+}
+
+/* Existing table styles (ensure these are present) */
+.programs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.programs-table th,
+.programs-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.programs-table th {
+    background-color: #763626;
+    color: white;
+    font-weight: bold;
+}
+
+.programs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.programs-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.program-stream h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #763626;
+}

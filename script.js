@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      document
-        .querySelector(link.getAttribute("href"))
-        .scrollIntoView({ behavior: "smooth" });
+      const targetId = link.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
   console.log("Smooth scroll event listeners set.");
@@ -47,8 +50,11 @@ const translations = {
       science_stream: "Science Stream",
       commerce_stream: "Commerce Stream",
       management_stream: "Management Stream", // Placeholder
-      arts_stream: "Arts & Humanities Stream", // Updated/Re-added for Arts
-      graduate_programs_main: "Graduate Programs (Postgraduate)", // NEW HEADING
+      arts_stream: "Arts & Humanities Stream",
+      graduate_programs_main: "Graduate Programs (Postgraduate)",
+      emerging_careers_main: "Emerging Careers & Their Use",
+      admission_info_main: "Admission Information", // Main Admission section heading
+      residency_admission_sub: "Residency Admission in the USA", // SUB-HEADING directly under Admission Info
     },
     intro: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
@@ -66,7 +72,6 @@ const translations = {
       // ... (rest of university data) ...
     ],
     after12_programs: {
-      // DATA FOR PROGRAMS AFTER 12TH
       science: [
         {
           program: "B.Tech / B.E",
@@ -112,7 +117,7 @@ const translations = {
           specializations: "Chartered Accountancy, Company Secretary",
           job_scope:
             "Chartered Accountant, Compliance Officer, Corporate Advisor",
-        }, // Changed ACCA to CS as per image
+        },
         {
           program: "BBS",
           specializations: "Business Studies, Marketing, Finance",
@@ -121,7 +126,6 @@ const translations = {
       ],
       management: [], // Keep as empty for now
       arts: [
-        // NEW DATA FOR ARTS & HUMANITIES
         {
           program: "B.A",
           specializations: "Psychology, History, Political Science, Sociology",
@@ -145,9 +149,8 @@ const translations = {
       ],
     },
     graduate_programs_intro:
-      "After completing an undergraduate degree, students can pursue a master's program to specialize further:", // NEW INTRO TEXT
+      "After completing an undergraduate degree, students can pursue a master's program to specialize further:",
     graduate_programs_list: [
-      // NEW DATA FOR GRADUATE PROGRAMS
       {
         program: "M.Tech / M.E",
         field: "Engineering",
@@ -189,6 +192,119 @@ const translations = {
         job_scope: "Clinical Pharmacist, Regulatory Affairs Manager",
       },
     ],
+    emerging_careers_list: [
+      {
+        career_title: "Customer Success Engineer",
+        primary_use:
+          "Ensures client satisfaction with tech products; bridges support and engineering",
+      },
+      {
+        career_title: "Digital Identity Manager",
+        primary_use:
+          "Manages secure digital identities; critical for cybersecurity and data privacy",
+      },
+      {
+        career_title: "RPA Developer",
+        primary_use:
+          "Designs bots to automate repetitive tasks; boosts efficiency in operations",
+      },
+      {
+        career_title: "AR Experience Manager",
+        primary_use:
+          "Creates immersive augmented reality experiences; used in retail, education",
+      },
+      {
+        career_title: "Chief Remote Work Officer",
+        primary_use:
+          "Overses remote work strategy; enhances productivity and culture in hybrid teams",
+      },
+      {
+        career_title: "Renewable Energy Engineer",
+        primary_use:
+          "Develops sustainable energy solutions; vital for climate and infrastructure goals",
+      },
+      {
+        career_title: "Cybersecurity Engineer",
+        primary_use:
+          "Protects systems from cyber threats; essential for data integrity and compliance",
+      },
+      {
+        career_title: "AI Prompt Engineer",
+        primary_use:
+          "Crafts effective prompts for AI models; improves accuracy and relevance of outputs",
+      },
+      {
+        career_title: "Blockchain Specialist",
+        primary_use:
+          "Builds decentralized systems; revolutionizes finance, supply chain, and security",
+      },
+      {
+        career_title: "Sustainability Analyst",
+        primary_use:
+          "Evaluates environmental impact; guides eco-friendly business decisions",
+      },
+    ],
+    residency_admission_list: [
+      {
+        step: "1. Graduate from a Recognized Medical School",
+        description:
+          "Your school must be listed in the World Directory of Medical Schools and eligible for ECFMG certification.",
+        notes: "Check for ECFMG “Sponsor Notes”",
+      },
+      {
+        step: "2. Obtain ECFMG Certification",
+        description:
+          "Required for IMGs to apply for residency. Includes document verification and passing USMLE exams.",
+        notes: "Start during 3rd year of med school if possible",
+      },
+      {
+        step: "3. Pass USMLE Step 1 & Step 2 CK",
+        description:
+          "These exams assess medical knowledge and clinical skills. High scores improve match chances.",
+        notes: "Aim for first-attempt success",
+      },
+      {
+        step: "4. Gain U.S. Clinical Experience",
+        description:
+          "Hands-on experience in U.S. hospitals through electives or observerships.",
+        notes: "Helps with letters of recommendation",
+      },
+      {
+        step: "5. Prepare Application Materials",
+        description:
+          "Includes personal statement, CV, MSPE, transcripts, and letters of recommendation.",
+        notes: "Tailor to your specialty and strengths",
+      },
+      {
+        step: "6. Apply via ERAS",
+        description:
+          "Use the Electronic Residency Application Service to submit applications to programs.",
+        notes: "Opens in June; submit early for best results",
+      },
+      {
+        step: "7. Register for NRMP Match",
+        description:
+          "The National Resident Matching Program pairs applicants with residency programs.",
+        notes: "Match Day is typically in March",
+      },
+      {
+        step: "8. Attend Interviews",
+        description:
+          "Programs invite selected applicants for interviews between October and January.",
+        notes: "Practice communication and professionalism",
+      },
+      {
+        step: "9. Rank Programs",
+        description: "Submit your ranked list of preferred programs to NRMP.",
+        notes: "Programs also rank applicants",
+      },
+      {
+        step: "10. Match Results",
+        description:
+          "If matched, you begin residency in July. If unmatched, you may enter SOAP or reapply next year.",
+        notes: "SOAP = Supplemental Offer and Acceptance Program",
+      },
+    ],
   },
   np: {
     headings: {
@@ -202,8 +318,12 @@ const translations = {
       science_stream: "विज्ञान संकाय",
       commerce_stream: "वाणिज्य संकाय",
       management_stream: "व्यवस्थापन संकाय", // Placeholder
-      arts_stream: "कला र मानविकी संकाय", // Updated/Re-added for Arts
-      graduate_programs_main: "स्नातकोत्तर कार्यक्रमहरू", // NEW HEADING
+      arts_stream: "कला र मानविकी संकाय",
+      graduate_programs_main: "स्नातकोत्तर कार्यक्रमहरू",
+      emerging_careers_main: "उभरदो करियर र तिनीहरूको प्रयोग",
+      admission_info_main: "प्रवेश जानकारी",
+      residency_admission_sub:
+        "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
     },
     intro: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
@@ -217,7 +337,6 @@ const translations = {
     ],
     // universities_list: [], // Removed if not needed
     after12_programs: {
-      // DATA FOR PROGRAMS AFTER 12TH
       science: [
         {
           program: "बी.टेक / बी.ई",
@@ -264,7 +383,7 @@ const translations = {
           specializations: "चार्टर्ड अकाउन्ट्यान्सी, कम्पनी सेक्रेटरी",
           job_scope:
             "चार्टर्ड एकाउन्टेन्ट, अनुपालन अधिकारी, कर्पोरेट सल्लाहकार",
-        }, // Changed ACCA to CS as per image
+        },
         {
           program: "BBS",
           specializations: "व्यवसाय अध्ययन, मार्केटिङ, वित्त",
@@ -273,7 +392,6 @@ const translations = {
       ],
       management: [], // Keep as empty for now
       arts: [
-        // NEW DATA FOR ARTS & HUMANITIES
         {
           program: "बी.ए",
           specializations: "मनोविज्ञान, इतिहास, राजनीति विज्ञान, समाजशास्त्र",
@@ -298,9 +416,8 @@ const translations = {
       ],
     },
     graduate_programs_intro:
-      "स्नातक डिग्री पूरा गरेपछि, विद्यार्थीहरू थप विशेषज्ञता हासिल गर्न मास्टरको कार्यक्रमहरू अध्ययन गर्न सक्छन्:", // NEW INTRO TEXT
+      "स्नातक डिग्री पूरा गरेपछि, विद्यार्थीहरू थप विशेषज्ञता हासिल गर्न मास्टरको कार्यक्रमहरू अध्ययन गर्न सक्छन्:",
     graduate_programs_list: [
-      // NEW DATA FOR GRADUATE PROGRAMS
       {
         program: "एम.टेक / एम.ई",
         field: "इन्जिनियरिङ",
@@ -342,6 +459,119 @@ const translations = {
         program: "एम.फार्म",
         field: "फार्मेसी",
         job_scope: "क्लिनिकल फार्मासिस्ट, नियामक मामिला प्रबन्धक",
+      },
+    ],
+    emerging_careers_list: [
+      {
+        career_title: "ग्राहक सफलता इन्जिनियर",
+        primary_use:
+          "प्राविधिक उत्पादनहरूसँग ग्राहक सन्तुष्टि सुनिश्चित गर्दछ; समर्थन र इन्जिनियरिङ बीच पुलको काम गर्छ।",
+      },
+      {
+        career_title: "डिजिटल पहिचान प्रबन्धक",
+        primary_use:
+          "सुरक्षित डिजिटल पहिचानहरू प्रबन्ध गर्दछ; साइबर सुरक्षा र डेटा गोपनीयताको लागि महत्त्वपूर्ण।",
+      },
+      {
+        career_title: "RPA विकासकर्ता",
+        primary_use:
+          "दोहोरिने कार्यहरू स्वचालित गर्न बोटहरू डिजाइन गर्दछ; सञ्चालनमा दक्षता बढाउँछ।",
+      },
+      {
+        career_title: "एआर अनुभव प्रबन्धक",
+        primary_use:
+          "इमर्सिभ संवर्धित वास्तविकता अनुभवहरू सिर्जना गर्दछ; खुद्रा, शिक्षामा प्रयोग गरिन्छ।",
+      },
+      {
+        career_title: "प्रमुख रिमोट कार्य अधिकारी",
+        primary_use:
+          "रिमोट कार्य रणनीतिहरूको निरीक्षण गर्दछ; हाइब्रिड टोलीहरूमा उत्पादकत्व र संस्कृति बढाउँछ।",
+      },
+      {
+        career_title: "नवीकरणीय ऊर्जा इन्जिनियर",
+        primary_use:
+          "दिगो ऊर्जा समाधानहरू विकास गर्दछ; जलवायु र पूर्वाधार लक्ष्यहरूको लागि महत्त्वपूर्ण।",
+      },
+      {
+        career_title: "साइबर सुरक्षा इन्जिनियर",
+        primary_use:
+          "साइबर खतराहरूबाट प्रणालीहरूलाई सुरक्षित गर्दछ; डेटा अखण्डता र अनुपालनका लागि आवश्यक।",
+      },
+      {
+        career_title: "एआई प्रम्प्ट इन्जिनियर",
+        primary_use:
+          "एआई मोडेलहरूको लागि प्रभावकारी प्रम्प्टहरू सिर्जना गर्दछ; आउटपुटहरूको शुद्धता र प्रासंगिकता सुधार गर्दछ।",
+      },
+      {
+        career_title: "ब्लकचेन विशेषज्ञ",
+        primary_use:
+          "विकेन्द्रीकृत प्रणालीहरू निर्माण गर्दछ; वित्त, आपूर्ति श्रृंखला र सुरक्षामा क्रान्ति ल्याउँछ।",
+      },
+      {
+        career_title: "दिगोपन विश्लेषक",
+        primary_use:
+          "वातावरणीय प्रभावको मूल्याङ्कन गर्दछ; पर्यावरण-मैत्री व्यवसायिक निर्णयहरू मार्गदर्शन गर्दछ।",
+      },
+    ],
+    residency_admission_list: [
+      {
+        step: "1. Graduate from a Recognized Medical School",
+        description:
+          "Your school must be listed in the World Directory of Medical Schools and eligible for ECFMG certification.",
+        notes: "Check for ECFMG “Sponsor Notes”",
+      },
+      {
+        step: "2. Obtain ECFMG Certification",
+        description:
+          "Required for IMGs to apply for residency. Includes document verification and passing USMLE exams.",
+        notes: "Start during 3rd year of med school if possible",
+      },
+      {
+        step: "3. Pass USMLE Step 1 & Step 2 CK",
+        description:
+          "These exams assess medical knowledge and clinical skills. High scores improve match chances.",
+        notes: "Aim for first-attempt success",
+      },
+      {
+        step: "4. Gain U.S. Clinical Experience",
+        description:
+          "Hands-on experience in U.S. hospitals through electives or observerships.",
+        notes: "Helps with letters of recommendation",
+      },
+      {
+        step: "5. Prepare Application Materials",
+        description:
+          "Includes personal statement, CV, MSPE, transcripts, and letters of recommendation.",
+        notes: "Tailor to your specialty and strengths",
+      },
+      {
+        step: "6. Apply via ERAS",
+        description:
+          "Use the Electronic Residency Application Service to submit applications to programs.",
+        notes: "Opens in June; submit early for best results",
+      },
+      {
+        step: "7. Register for NRMP Match",
+        description:
+          "The National Resident Matching Program pairs applicants with residency programs.",
+        notes: "Match Day is typically in March",
+      },
+      {
+        step: "8. Attend Interviews",
+        description:
+          "Programs invite selected applicants for interviews between October and January.",
+        notes: "Practice communication and professionalism",
+      },
+      {
+        step: "9. Rank Programs",
+        description: "Submit your ranked list of preferred programs to NRMP.",
+        notes: "Programs also rank applicants",
+      },
+      {
+        step: "10. Match Results",
+        description:
+          "If matched, you begin residency in July. If unmatched, you may enter SOAP or reapply next year.",
+        notes: "SOAP = Supplemental Offer and Acceptance Program",
       },
     ],
   },
@@ -396,7 +626,7 @@ function setLanguage(lang) {
   if (artsStreamHeading)
     artsStreamHeading.textContent = translations[lang].headings.arts_stream;
 
-  // New heading for Graduate Programs section
+  // Heading for Graduate Programs section
   const graduateProgramsMainHeading = document.getElementById(
     "graduate-programs-main-heading"
   );
@@ -411,6 +641,30 @@ function setLanguage(lang) {
   if (graduateProgramsIntroText)
     graduateProgramsIntroText.textContent =
       translations[lang].graduate_programs_intro;
+
+  // Heading for Emerging Careers section
+  const emergingCareersMainHeading = document.getElementById(
+    "emerging-careers-main-heading"
+  );
+  if (emergingCareersMainHeading)
+    emergingCareersMainHeading.textContent =
+      translations[lang].headings.emerging_careers_main;
+
+  // Heading for Admission Information section
+  const admissionInfoMainHeading = document.getElementById(
+    "admission-info-main-heading"
+  );
+  if (admissionInfoMainHeading)
+    admissionInfoMainHeading.textContent =
+      translations[lang].headings.admission_info_main;
+
+  // Sub-heading for Residency Admission
+  const residencyAdmissionSubHeading = document.getElementById(
+    "residency-admission-sub-heading"
+  );
+  if (residencyAdmissionSubHeading)
+    residencyAdmissionSubHeading.textContent =
+      translations[lang].headings.residency_admission_sub;
 
   const introParagraph = document.getElementById("intro")?.querySelector("p");
   if (introParagraph) introParagraph.textContent = translations[lang].intro[0];
@@ -445,8 +699,7 @@ function setLanguage(lang) {
     "arts-table-container",
     translations[lang].after12_programs.arts,
     lang
-  ); // NEW Call for Arts
-  // Add calls for management stream if it has data
+  );
   populateProgramsTable(
     "management-table-container",
     translations[lang].after12_programs.management,
@@ -458,26 +711,36 @@ function setLanguage(lang) {
     "graduate-table-container",
     translations[lang].graduate_programs_list,
     lang
-  ); // NEW Call for Graduate Programs
+  );
+
+  // Populate Emerging Careers table
+  populateEmergingCareersTable(
+    "emerging-careers-table-container",
+    translations[lang].emerging_careers_list,
+    lang
+  );
+
+  // Populate Residency Admission table (directly, as it's a dedicated section now)
+  populateResidencyAdmissionTable(
+    "residency-table-container",
+    translations[lang].residency_admission_list,
+    lang
+  );
 
   console.log("Language switched to:", lang);
 }
 
-// Function to populate the programs table (reused for Undergraduate and Graduate)
-// This function is generic and will create a table based on headers derived from data keys
+// Function to populate generic tables (used for Undergraduate, Graduate, Emerging Careers, Residency)
 function populateProgramsTable(containerId, data, lang) {
   const container = document.getElementById(containerId);
   if (!container) {
-    console.warn(
-      `Container with ID '${containerId}' not found for programs table.`
-    );
+    console.warn(`Container with ID '${containerId}' not found for table.`);
     return;
   }
 
   container.innerHTML = ""; // Clear existing table
 
   if (!data || data.length === 0) {
-    // Display a message if no data is available for this stream
     const noDataMessage = document.createElement("p");
     noDataMessage.textContent =
       lang === "en"
@@ -490,13 +753,18 @@ function populateProgramsTable(containerId, data, lang) {
   const table = document.createElement("table");
   table.classList.add("programs-table"); // Add a class for styling
 
-  // Determine headers dynamically based on the first item's keys (Program, Specializations, Job Scope OR Program, Field, Job Scope)
+  // Determine headers dynamically based on the first item's keys
   const firstItemKeys = Object.keys(data[0]);
   const headerMap = {
     program: { en: "Program", np: "कार्यक्रम" },
     specializations: { en: "Specializations", np: "विशेषज्ञताहरू" },
     job_scope: { en: "Job Scope", np: "रोजगार क्षेत्र" },
-    field: { en: "Field", np: "क्षेत्र" }, // Added for Graduate Programs
+    field: { en: "Field", np: "क्षेत्र" },
+    career_title: { en: "Career Title", np: "करियर शीर्षक" },
+    primary_use: { en: "Primary Use / Impact", np: "प्राथमिक प्रयोग / प्रभाव" },
+    step: { en: "Step", np: "चरण" },
+    description: { en: "Description", np: "विवरण" },
+    notes: { en: "Notes", np: "नोटहरू" },
   };
 
   // Create table header
@@ -504,7 +772,7 @@ function populateProgramsTable(containerId, data, lang) {
   const headerRow = document.createElement("tr");
   firstItemKeys.forEach((key) => {
     const th = document.createElement("th");
-    th.textContent = headerMap[key] ? headerMap[key][lang] : key; // Use mapped header or key directly
+    th.textContent = headerMap[key] ? headerMap[key][lang] : key;
     headerRow.appendChild(th);
   });
   thead.appendChild(headerRow);
@@ -524,75 +792,31 @@ function populateProgramsTable(containerId, data, lang) {
   table.appendChild(tbody);
 
   container.appendChild(table);
-  console.log(`Programs table populated for ${containerId}.`);
+  console.log(`Table populated for ${containerId}.`);
 }
 
-// A new function for Graduate Programs table, similar to populateProgramsTable but with specific headers
-// However, I've made populateProgramsTable generic, so we can actually reuse it.
-// I will keep this as a separate function as it might have different header needs, but it uses the same core logic.
+// Function for Graduate Programs table (uses generic populateProgramsTable)
 function populateGraduateProgramsTable(containerId, data, lang) {
-  const container = document.getElementById(containerId);
-  if (!container) {
-    console.warn(
-      `Container with ID '${containerId}' not found for graduate programs table.`
-    );
-    return;
-  }
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `Graduate programs table populated for ${containerId} (via generic).`
+  );
+}
 
-  container.innerHTML = ""; // Clear existing table
+// Function for Emerging Careers table (uses generic populateProgramsTable)
+function populateEmergingCareersTable(containerId, data, lang) {
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `Emerging careers table populated for ${containerId} (via generic).`
+  );
+}
 
-  if (!data || data.length === 0) {
-    const noDataMessage = document.createElement("p");
-    noDataMessage.textContent =
-      lang === "en"
-        ? "No graduate programs available yet."
-        : "हाल कुनै स्नातकोत्तर कार्यक्रम उपलब्ध छैनन्।";
-    container.appendChild(noDataMessage);
-    return;
-  }
-
-  const table = document.createElement("table");
-  table.classList.add("programs-table"); // Use the same styling
-
-  // Specific headers for graduate programs
-  const thead = document.createElement("thead");
-  const headerRow = document.createElement("tr");
-  const headers = [
-    { en: "Graduate Program", np: "स्नातकोत्तर कार्यक्रम" },
-    { en: "Field", np: "क्षेत्र" },
-    { en: "Job Scope", np: "रोजगार क्षेत्र" },
-  ];
-  headers.forEach((header) => {
-    const th = document.createElement("th");
-    th.textContent = header[lang];
-    headerRow.appendChild(th);
-  });
-  thead.appendChild(headerRow);
-  table.appendChild(thead);
-
-  // Create table body
-  const tbody = document.createElement("tbody");
-  data.forEach((item) => {
-    const row = document.createElement("tr");
-
-    const programCell = document.createElement("td");
-    programCell.textContent = item.program;
-    row.appendChild(programCell);
-
-    const fieldCell = document.createElement("td");
-    fieldCell.textContent = item.field;
-    row.appendChild(fieldCell);
-
-    const jobScopeCell = document.createElement("td");
-    jobScopeCell.textContent = item.job_scope;
-    row.appendChild(jobScopeCell);
-
-    tbody.appendChild(row);
-  });
-  table.appendChild(tbody);
-
-  container.appendChild(table);
-  console.log(`Graduate programs table populated for ${containerId}.`);
+// Function for Residency Admission table (uses generic populateProgramsTable)
+function populateResidencyAdmissionTable(containerId, data, lang) {
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `Residency Admission table populated for ${containerId} (via generic).`
+  );
 }
 
 // Keyboard shortcut: Ctrl + L toggles language
@@ -621,10 +845,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial language setup based on browser
   const browserLang = navigator.language || navigator.userLanguage;
   const initialLang = browserLang.startsWith("ne") ? "np" : "en";
-  setLanguage(initialLang); // This will call populateProgramsTable and populateGraduateProgramsTable
+  setLanguage(initialLang);
   console.log("Initial language set to:", initialLang);
 
-  // Explicit button handling
+  // Explicit button handling for language toggle
   const btnEn = document.getElementById("btn-en");
   const btnNp = document.getElementById("btn-np");
 
