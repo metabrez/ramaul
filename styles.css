@@ -67,6 +67,7 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
 .gallery figure {
     text-align: center;
 }
@@ -76,6 +77,7 @@ footer {
     font-style: italic;
     color: #555;
 }
+
 .datetime-bar {
     background-color: #f4f4f4;
     color: #333;
@@ -104,6 +106,7 @@ footer {
 .language-toggle button:hover {
     background-color: #bbb;
 }
+
 #bs-date {
     background-color: #f4f4f4;
     color: #333;
@@ -153,6 +156,7 @@ footer {
     color: #763626;
     /* Match header color */
 }
+
 /* Add to your existing styles.css */
 
 .programs-table {
@@ -192,6 +196,7 @@ footer {
     color: #763626;
     /* Match header color */
 }
+
 /* Add to your existing styles.css */
 
 .programs-table {
@@ -231,6 +236,7 @@ footer {
     color: #763626;
     /* Match header color */
 }
+
 /* Add to your existing styles.css */
 
 .programs-table {
@@ -360,4 +366,42 @@ footer {
     margin-bottom: 15px;
     font-size: 1.5em;
     color: #763626;
+}
+
+/* NEW: FAQ Section Styles */
+.faq-section {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.faq-section h2 {
+    color: #763626;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    color: #763626;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+    /* Indicate it's clickable if you add collapse/expand functionality later */
+}
+
+.faq-answer {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
 }

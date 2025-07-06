@@ -59,6 +59,7 @@ const translations = {
       // NEW: Engineering Admission Sub-heading
       engineering_admission_nepal_sub:
         "Engineering Admission Process in Nepal (Bachelor's Level)",
+      faq_main: "Frequently Asked Questions (FAQs)", // NEW FAQ Main Heading
     },
     intro: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
@@ -410,6 +411,23 @@ const translations = {
         notes: "Duration: 4 years (8 semesters)",
       },
     ],
+    // NEW: FAQ data
+    faq: {
+      mbbs: {
+        q1: "Is NEET-UG mandatory for MBBS admission in Nepal for Indian students?",
+        a1: "Yes, NEET-UG is mandatory for Indian students seeking MBBS admission in Nepalese medical colleges. Your NEET score is valid for 3 years.",
+        q2: "What are the eligibility criteria for MBBS in Nepal?",
+        a2: "You need to complete 10+2 with Physics, Chemistry, and Biology, with a minimum of 50% aggregate in PCB. You must also be at least 17 years old by December 31 of the admission year.",
+      },
+      engineering: {
+        q1: "What are the eligibility requirements for Bachelor's level Engineering in Nepal?",
+        a1: "You must have completed 10+2 Science (Physics, Chemistry, Mathematics) or an equivalent qualification with a minimum of 45-50% marks.",
+        q2: "Which universities offer Engineering programs in Nepal?",
+        a2: "Key options include Tribhuvan University (IOE), Kathmandu University (KU), Pokhara University, and Purbanchal University. Each has its own entrance and intake system.",
+        q3: "What is MECEE-BL, and is it required for Engineering admissions?",
+        a3: "MECEE-BL (Medical Education Common Entrance Examination - Bachelor Level) is primarily for medical education. For Engineering, you'll apply for entrance exams like IOE Entrance (Tribhuvan) or KUCAT (Kathmandu) through university portals.",
+      },
+    },
   },
   np: {
     headings: {
@@ -433,6 +451,7 @@ const translations = {
       // NEW: Engineering Admission Sub-heading (Nepali)
       engineering_admission_nepal_sub:
         "नेपालमा इन्जिनियरिङ भर्ना प्रक्रिया (ब्याचलर स्तर)",
+      faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)", // NEW FAQ Main Heading (Nepali)
     },
     intro: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
@@ -786,6 +805,23 @@ const translations = {
         notes: "अवधि: ४ वर्ष (८ सेमेस्टर)",
       },
     ],
+    // NEW: FAQ data (Nepali)
+    faq: {
+      mbbs: {
+        q1: "भारतीय विद्यार्थीहरूको लागि नेपालमा एमबीबीएस भर्नाको लागि NEET-UG अनिवार्य छ?",
+        a1: "हो, नेपाली मेडिकल कलेजहरूमा एमबीबीएस भर्ना खोज्ने भारतीय विद्यार्थीहरूको लागि NEET-UG अनिवार्य छ। तपाईंको NEET स्कोर ३ वर्षको लागि मान्य छ।",
+        q2: "नेपालमा एमबीबीएसका लागि योग्यता मापदण्ड के हुन्?",
+        a2: "तपाईंले भौतिक विज्ञान, रसायन विज्ञान र जीवविज्ञानका साथ १०+२ पूरा गरेको हुनुपर्छ; PCB मा न्यूनतम ५०% कुल अंक आवश्यक छ। तपाईं भर्ना वर्षको डिसेम्बर ३१ सम्ममा कम्तीमा १७ वर्षको हुनुपर्छ।",
+      },
+      engineering: {
+        q1: "नेपालमा स्नातक स्तरको इन्जिनियरिङका लागि योग्यता आवश्यकताहरू के-के छन्?",
+        a1: "तपाईंले १०+२ विज्ञान (भौतिक विज्ञान, रसायन विज्ञान, गणित) वा सो सरहको योग्यता न्यूनतम ४५-५०% अंकका साथ पूरा गरेको हुनुपर्छ।",
+        q2: "नेपालमा कुन विश्वविद्यालयहरूले इन्जिनियरिङ कार्यक्रमहरू प्रदान गर्छन्?",
+        a2: "मुख्य विकल्पहरूमा त्रिभुवन विश्वविद्यालय (IOE), काठमाडौं विश्वविद्यालय (KU), पोखरा विश्वविद्यालय, र पूर्वाञ्चल विश्वविद्यालय समावेश छन्। प्रत्येकको आफ्नै प्रवेश र भर्ना प्रणाली छ।",
+        q3: "MECEE-BL के हो, र यो इन्जिनियरिङ भर्नाका लागि आवश्यक छ?",
+        a3: "MECEE-BL (मेडिकल शिक्षा साझा प्रवेश परीक्षा - स्नातक स्तर) मुख्यतया चिकित्सा शिक्षाका लागि हो। इन्जिनियरिङका लागि, तपाईंले विश्वविद्यालय पोर्टलहरू मार्फत IOE प्रवेश (त्रिभुवन) वा KUCAT (काठमाडौं) जस्ता प्रवेश परीक्षाहरूका लागि आवेदन दिनुपर्छ।",
+      },
+    },
   },
 };
 
@@ -894,6 +930,12 @@ function setLanguage(lang) {
     engineeringAdmissionNepalSubHeading.textContent =
       translations[lang].headings.engineering_admission_nepal_sub;
 
+  // NEW: Main FAQ Heading
+  const faqMainHeading = document.getElementById("faq-main-heading");
+  if (faqMainHeading) {
+    faqMainHeading.textContent = translations[lang].headings.faq_main;
+  }
+
   const introParagraph = document.getElementById("intro")?.querySelector("p");
   if (introParagraph) introParagraph.textContent = translations[lang].intro[0];
 
@@ -963,6 +1005,40 @@ function setLanguage(lang) {
     translations[lang].engineering_admission_nepal_list,
     lang
   );
+
+  // NEW: Populate FAQ section
+  const faqMbbsQ1Heading = document.getElementById("faq-mbbs-q1-heading");
+  if (faqMbbsQ1Heading)
+    faqMbbsQ1Heading.textContent = translations[lang].faq.mbbs.q1;
+  const faqMbbsA1Text = document.getElementById("faq-mbbs-a1-text");
+  if (faqMbbsA1Text) faqMbbsA1Text.textContent = translations[lang].faq.mbbs.a1;
+
+  const faqMbbsQ2Heading = document.getElementById("faq-mbbs-q2-heading");
+  if (faqMbbsQ2Heading)
+    faqMbbsQ2Heading.textContent = translations[lang].faq.mbbs.q2;
+  const faqMbbsA2Text = document.getElementById("faq-mbbs-a2-text");
+  if (faqMbbsA2Text) faqMbbsA2Text.textContent = translations[lang].faq.mbbs.a2;
+
+  const faqEngQ1Heading = document.getElementById("faq-eng-q1-heading");
+  if (faqEngQ1Heading)
+    faqEngQ1Heading.textContent = translations[lang].faq.engineering.q1;
+  const faqEngA1Text = document.getElementById("faq-eng-a1-text");
+  if (faqEngA1Text)
+    faqEngA1Text.textContent = translations[lang].faq.engineering.a1;
+
+  const faqEngQ2Heading = document.getElementById("faq-eng-q2-heading");
+  if (faqEngQ2Heading)
+    faqEngQ2Heading.textContent = translations[lang].faq.engineering.q2;
+  const faqEngA2Text = document.getElementById("faq-eng-a2-text");
+  if (faqEngA2Text)
+    faqEngA2Text.textContent = translations[lang].faq.engineering.a2;
+
+  const faqEngQ3Heading = document.getElementById("faq-eng-q3-heading");
+  if (faqEngQ3Heading)
+    faqEngQ3Heading.textContent = translations[lang].faq.engineering.q3;
+  const faqEngA3Text = document.getElementById("faq-eng-a3-text");
+  if (faqEngA3Text)
+    faqEngA3Text.textContent = translations[lang].faq.engineering.a3;
 
   console.log("Language switched to:", lang);
 }
