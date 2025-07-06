@@ -806,11 +806,6 @@ function setLanguage(lang) {
     translations[lang].after12_programs.arts,
     lang
   );
-  populateProgramsTable(
-    "management-table-container",
-    translations[lang].after12_programs.management,
-    lang
-  );
 
   // Populate Graduate Programs table
   populateGraduateProgramsTable(
