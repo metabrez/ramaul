@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Ramaul</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/nepali-date@latest/nepali-date.js"></script>
+
+</head>
+
+<body>
+   
+
+    <!-- Nepali Bikram Sambat Date -->
+    <div id="bs-date" class="datetime-bar"></div>
+    
+    <!-- Gregorian Date & Time -->
+    <div id="datetime" class="datetime-bar"></div>
+    
+    <!-- Forex Rate Section -->
+    <!-- <div id="forex-rate" class="datetime-bar">Loading USD rate...</div> -->
+    
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('np')">नेपाली</button>
+    </div>
+
+    <header>
+        <h1>Ramaul - A Cultural Gem of Nepal</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2 id="intro-heading">Introduction</h2>
+            <p>Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal.
+                Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy
+                access to goods from both the border and Siraha Bazaar.</p>
+        </section>
+
+        <section id="home">
+            <h2 id="home-heading">Home</h2>
+            <p>Geographically, Ramaul lies at 26.80°N 86.09°E and is surrounded by Makhanaha, Basbitta, Manpur, Madar,
+                and the Kamala River. The population ranges between 20,000–25,000, predominantly Muslim, with a unique
+                dialect called Mithila Urdu spoken locally.</p>
+            <p>The village is divided into five areas: Purab Tola, Uttar Tola, Paschim Tola, Dakshin Tola, and Mansoori
+                Tola. Ramaul Chowk is the central hub, home to the popular Ahmadiya Tea Shop and Eidgah grounds for
+                community prayers.</p>
+        </section>
+
+        <section id="history">
+            <h2 id="history-heading">History</h2>
+            <p>Previously part of the Village Development Committee, Ramaul now falls under Siraha Municipality Wards 3,
+                4, and 5. It has a rich tradition of Islamic education with six madrasahs, ten mosques, and both
+                government and private schools. The Kamala River flowing nearby adds to its scenic and strategic
+                significance.</p>
+        </section>
+        <section id="gallery">
+            <h2 id="gallery-heading">Gallery</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="./images/6.Darul_Taleem.jpg" alt="Darul Taleem" />
+                    <figcaption>Darul Taleem</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/5.Madarsa_Hussainia.jpg" alt="Madarsa Hussainia" />
+                    <figcaption>Madarsa Hussainia</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/3. Madarsa_Salfiya.jpg" alt="Madarsa_Salfiya" />
+                    <figcaption>Madarsa Salfiya</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/7.Nepal_Avalance_Academy.jpg" alt="Nepal Avalanche Academy" />
+                    <figcaption>Nepal Avalanche Academy</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/4.ward_office.jpg" alt="Ward Office" />
+                    <figcaption>Ward No 4 Office</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/1.Jama_Masjid_Purab.jpg" alt="Jama Masjid, Purab Tola" />
+                    <figcaption>Jama Masjid, Purab Tola</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/8.Masjid_Bilal.jpg" alt="Masjid Bilal, Baluwa Tola" />
+                    <figcaption>Masjid Bilal, Baluwa Tola</figcaption>
+                </figure>
+                <figure>
+                    <img src="./images/2.Eid_Prayer_Eidgah.jpg" alt="Eid Prayer Eidgah" />
+                    <figcaption>Eid Prayer Eidgah</figcaption>
+                </figure>
+            </div>
+          
+
+        <section id="map">
+            <h2 id="map-heading">Map of Ramaul</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.964481634801!2d86.0885!3d26.8000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6f9c4b3f3e3f%3A0x8028a83e2519e49e!2sRamaul%2C%20Siraha%2C%20Nepal!5e0!3m2!1sen!2sus!4v1685981402954!5m2!1sen!2sus"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Discover Ramaul. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
