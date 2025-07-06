@@ -55,6 +55,7 @@ const translations = {
       emerging_careers_main: "Emerging Careers & Their Use",
       admission_info_main: "Admission Information", // Main Admission section heading
       residency_admission_sub: "Residency Admission in the USA", // SUB-HEADING directly under Admission Info
+      mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)", // NEW MBBS Admission Sub-heading
     },
     intro: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
@@ -305,6 +306,54 @@ const translations = {
         notes: "SOAP = Supplemental Offer and Acceptance Program",
       },
     ],
+    mbbs_admission_nepal_list: [
+      // NEW MBBS Admission Data
+      {
+        step: "1. Meet Eligibility Criteria",
+        description:
+          "Complete 10+2 with Physics, Chemistry, Biology; minimum 50% aggregate in PCB",
+        notes: "Age ≥ 17 years by Dec 31 of admission year",
+      },
+      {
+        step: "2. Qualify NEET-UG",
+        description:
+          "Mandatory for Indian students to apply to Nepalese medical colleges",
+        notes: "NEET score valid for 3 years",
+      },
+      {
+        step: "3. Register for MECEE-BL",
+        description:
+          "Common entrance exam conducted by Nepal’s Medical Education Commission",
+        notes: "Required for top colleges like IoM, BPKIHS, PAHS",
+      },
+      {
+        step: "4. Choose Medical University",
+        description:
+          "Select NMC-approved colleges such as KIST, Kathmandu Medical, Nobel, Lumbini",
+        notes: "Consider fees, location, faculty, and recognition",
+      },
+      {
+        step: "5. Submit Application",
+        description:
+          "Apply online via MECEE portal or directly to private colleges",
+        notes: "Include academic records, NEET score, ID proof",
+      },
+      {
+        step: "6. Attend Counseling / Interview",
+        description: "Based on MECEE rank or direct admission route",
+        notes: "Helps finalize college and seat allocation",
+      },
+      {
+        step: "7. Confirm Admission",
+        description: "Pay initial fees and submit required documents",
+        notes: "Receive admission letter from the university",
+      },
+      {
+        step: "8. Begin Academic Session",
+        description: "Classes typically start in August–September",
+        notes: "Duration: 5.5 years (including 1-year internship)",
+      },
+    ],
   },
   np: {
     headings: {
@@ -324,6 +373,7 @@ const translations = {
       admission_info_main: "प्रवेश जानकारी",
       residency_admission_sub:
         "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
+      mbbs_admission_nepal_sub: "नेपालमा MBBS भर्ना प्रक्रिया (२०२५–२६)", // NEW MBBS Admission Sub-heading
     },
     intro: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
@@ -574,6 +624,54 @@ const translations = {
         notes: "SOAP = Supplemental Offer and Acceptance Program",
       },
     ],
+    mbbs_admission_nepal_list: [
+      // NEW MBBS Admission Data
+      {
+        step: "1. Meet Eligibility Criteria",
+        description:
+          "Complete 10+2 with Physics, Chemistry, Biology; minimum 50% aggregate in PCB",
+        notes: "Age ≥ 17 years by Dec 31 of admission year",
+      },
+      {
+        step: "2. Qualify NEET-UG",
+        description:
+          "Mandatory for Indian students to apply to Nepalese medical colleges",
+        notes: "NEET score valid for 3 years",
+      },
+      {
+        step: "3. Register for MECEE-BL",
+        description:
+          "Common entrance exam conducted by Nepal’s Medical Education Commission",
+        notes: "Required for top colleges like IoM, BPKIHS, PAHS",
+      },
+      {
+        step: "4. Choose Medical University",
+        description:
+          "Select NMC-approved colleges such as KIST, Kathmandu Medical, Nobel, Lumbini",
+        notes: "Consider fees, location, faculty, and recognition",
+      },
+      {
+        step: "5. Submit Application",
+        description:
+          "Apply online via MECEE portal or directly to private colleges",
+        notes: "Include academic records, NEET score, ID proof",
+      },
+      {
+        step: "6. Attend Counseling / Interview",
+        description: "Based on MECEE rank or direct admission route",
+        notes: "Helps finalize college and seat allocation",
+      },
+      {
+        step: "7. Confirm Admission",
+        description: "Pay initial fees and submit required documents",
+        notes: "Receive admission letter from the university",
+      },
+      {
+        step: "8. Begin Academic Session",
+        description: "Classes typically start in August–September",
+        notes: "Duration: 5.5 years (including 1-year internship)",
+      },
+    ],
   },
 };
 
@@ -666,6 +764,14 @@ function setLanguage(lang) {
     residencyAdmissionSubHeading.textContent =
       translations[lang].headings.residency_admission_sub;
 
+  // NEW: Sub-heading for MBBS Admission Nepal
+  const mbbsAdmissionNepalSubHeading = document.getElementById(
+    "mbbs-admission-nepal-sub-heading"
+  );
+  if (mbbsAdmissionNepalSubHeading)
+    mbbsAdmissionNepalSubHeading.textContent =
+      translations[lang].headings.mbbs_admission_nepal_sub;
+
   const introParagraph = document.getElementById("intro")?.querySelector("p");
   if (introParagraph) introParagraph.textContent = translations[lang].intro[0];
 
@@ -720,17 +826,24 @@ function setLanguage(lang) {
     lang
   );
 
-  // Populate Residency Admission table (directly, as it's a dedicated section now)
+  // Populate Residency Admission table
   populateResidencyAdmissionTable(
     "residency-table-container",
     translations[lang].residency_admission_list,
     lang
   );
 
+  // NEW: Populate MBBS Admission Nepal table
+  populateMBBSAdmissionNepalTable(
+    "mbbs-admission-nepal-table-container",
+    translations[lang].mbbs_admission_nepal_list,
+    lang
+  );
+
   console.log("Language switched to:", lang);
 }
 
-// Function to populate generic tables (used for Undergraduate, Graduate, Emerging Careers, Residency)
+// Function to populate generic tables (used for Undergraduate, Graduate, Emerging Careers, Residency, MBBS Nepal)
 function populateProgramsTable(containerId, data, lang) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -816,6 +929,14 @@ function populateResidencyAdmissionTable(containerId, data, lang) {
   populateProgramsTable(containerId, data, lang);
   console.log(
     `Residency Admission table populated for ${containerId} (via generic).`
+  );
+}
+
+// NEW: Function for MBBS Admission Nepal table (uses generic populateProgramsTable)
+function populateMBBSAdmissionNepalTable(containerId, data, lang) {
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `MBBS Admission Nepal table populated for ${containerId} (via generic).`
   );
 }
 
