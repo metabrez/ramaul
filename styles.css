@@ -18,10 +18,14 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
+    /* Needed for dropdown positioning */
 }
 
 nav li {
     margin: 0 15px;
+    position: relative;
+    /* For dropdown */
 }
 
 nav a {
@@ -29,10 +33,66 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+    padding: 10px 0;
+    /* Add padding for better click area */
+    display: block;
+    /* Make the whole area clickable */
 }
 
 nav a:hover {
     color: #ffd700;
+}
+
+/* Dropdown menu for Admission Information */
+.dropdown-menu {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    background-color: #763626;
+    /* Same as header for continuity */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    /* Space below parent nav item */
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center the dropdown */
+}
+
+.dropdown-menu.active {
+    display: block;
+    /* Show when active class is added */
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+    /* Sub-links can be less bold */
+}
+
+.dropdown-menu a:hover {
+    background-color: #a04c38;
+    /* Slightly lighter shade on hover */
+    color: #ffd700;
+    border-radius: 5px;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.2s;
 }
 
 main {
@@ -117,14 +177,12 @@ footer {
     border-bottom: 1px solid #ccc;
 }
 
-/* Add to your existing styles.css */
-
+/* General table styles */
 .programs-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
     margin-bottom: 30px;
-    /* Space after tables */
 }
 
 .programs-table th,
@@ -136,7 +194,6 @@ footer {
 
 .programs-table th {
     background-color: #763626;
-    /* Darker header background */
     color: white;
     font-weight: bold;
 }
@@ -149,226 +206,71 @@ footer {
     background-color: #ddd;
 }
 
-.program-stream h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    color: #763626;
-    /* Match header color */
-}
-
-/* Add to your existing styles.css */
-
-.programs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    /* Space after tables */
-}
-
-.programs-table th,
-.programs-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.programs-table th {
-    background-color: #763626;
-    /* Darker header background */
-    color: white;
-    font-weight: bold;
-}
-
-.programs-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.programs-table tbody tr:hover {
-    background-color: #ddd;
-}
-
-.program-stream h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    color: #763626;
-    /* Match header color */
-}
-
-/* Add to your existing styles.css */
-
-.programs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    /* Space after tables */
-}
-
-.programs-table th,
-.programs-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.programs-table th {
-    background-color: #763626;
-    /* Darker header background */
-    color: white;
-    font-weight: bold;
-}
-
-.programs-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.programs-table tbody tr:hover {
-    background-color: #ddd;
-}
-
-.program-stream h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    color: #763626;
-    /* Match header color */
-}
-
-/* Add to your existing styles.css */
-
-.programs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    /* Space after tables */
-}
-
-.programs-table th,
-.programs-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.programs-table th {
-    background-color: #763626;
-    /* Darker header background */
-    color: white;
-    font-weight: bold;
-}
-
-.programs-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.programs-table tbody tr:hover {
-    background-color: #ddd;
-}
-
-.program-stream h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    color: #763626;
-    /* Match header color */
-}
-
-/* Add to your existing styles.css */
-
-.admission-tabs {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    /* Arrange buttons side-by-side */
-    gap: 5px;
-    /* Space between buttons */
-}
-
-.admission-tab-button {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    /* Make it look like a tab */
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.admission-tab-button:hover {
-    background-color: #e0e0e0;
-}
-
-.admission-tab-button.active {
+/* Education Section Specific Styles */
+#education .education-subsection {
+    margin-bottom: 40px;
+    /* Space between sub-sections like After 12th, Graduate, etc. */
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
     background-color: #fff;
-    /* Active tab is white to blend with content area */
-    border-color: #ccc;
-    border-bottom: 1px solid #fff;
-    /* Hide bottom border to merge with content */
-    color: #763626;
-    /* Highlight active tab text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
-#admission-content-container {
+#education h2 {
+    color: #763626;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+#education h3 {
+    margin-top: 0px;
+    /* Adjust top margin for sub-headings */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #763626;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 10px;
+}
+
+#education h4 {
+    /* For Science Stream, Commerce Stream, etc. */
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #5a2a20;
+}
+
+
+/* Admission Information Section (Non-tabbed, direct sections) */
+#admission-info h2 {
+    color: #763626;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+#admission-info .admission-content-section {
+    margin-bottom: 40px;
     border: 1px solid #ddd;
     padding: 20px;
-    margin-top: -1px;
-    /* Overlap with tab border for seamless look */
+    border-radius: 8px;
     background-color: #fff;
-    min-height: 200px;
-    /* Give it some minimum height */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
-/* Ensure table styling still applies within this container */
-#admission-content-container .programs-table {
+#admission-info .admission-content-section h3 {
     margin-top: 0;
-    /* Remove top margin if it conflicts with padding */
-}
-
-/* Existing table styles (ensure these are present) */
-.programs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-
-.programs-table th,
-.programs-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.programs-table th {
-    background-color: #763626;
-    color: white;
-    font-weight: bold;
-}
-
-.programs-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.programs-table tbody tr:hover {
-    background-color: #ddd;
-}
-
-.program-stream h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-size: 1.8em;
     color: #763626;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 10px;
 }
 
-/* NEW: FAQ Section Styles */
+
+/* FAQ Section Styles (remain the same) */
 .faq-section {
     margin-top: 40px;
     border-top: 1px solid #eee;
@@ -396,8 +298,6 @@ footer {
     font-size: 1.2em;
     margin-top: 0;
     margin-bottom: 10px;
-    cursor: pointer;
-    /* Indicate it's clickable if you add collapse/expand functionality later */
 }
 
 .faq-answer {

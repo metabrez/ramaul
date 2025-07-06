@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-1.0">
     <title>Discover Ramaul</title>
     <link rel="stylesheet" href="styles.css">
 
@@ -26,11 +26,18 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#history">History</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#after12">After 12th</a></li>
-                <li><a href="#graduate-programs">Graduate Programs</a></li>
-                <li><a href="#emerging-careers">Emerging Careers</a></li>
-                <li><a href="#universities-nepal">Universities in Nepal</a></li>
-                <li><a href="#admission-info">Admission Information</a></li>
+                <li><a href="#education">Education</a></li>
+                <li>
+                    <a href="#" id="admission-nav-toggle">Admission Information <span
+                            class="dropdown-arrow">▼</span></a>
+                    <ul id="admission-dropdown" class="dropdown-menu">
+                        <li><a href="#mbbs-admission-section" id="nav-link-mbbs">MBBS Admission</a></li>
+                        <li><a href="#engineering-admission-section" id="nav-link-engineering">Engineering Admission</a>
+                        </li>
+                        <li><a href="#graduate-admission-section" id="nav-link-graduate">Graduate Admission</a></li>
+                        <li><a href="#residency-admission-section" id="nav-link-residency">Residency in USA</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -98,70 +105,63 @@
             </div>
         </section>
 
+        <section id="education">
+            <h2 id="education-main-heading">Education in Nepal</h2>
 
-
-        <section id="after12">
-            <h2 id="after12-main-heading">Undergraduate Programs After 12th</h2>
-
-            <div class="program-stream">
-                <h3 id="science-stream-heading">Science Stream</h3>
-                <div id="science-table-container">
+            <div class="education-subsection">
+                <h3 id="after12-main-heading">Undergraduate Programs After 12th</h3>
+                <div class="program-stream">
+                    <h4 id="science-stream-heading">Science Stream</h4>
+                    <div id="science-table-container"></div>
+                </div>
+                <div class="program-stream">
+                    <h4 id="commerce-stream-heading">Commerce Stream</h4>
+                    <div id="commerce-table-container"></div>
+                </div>
+                <div class="program-stream">
+                    <h4 id="arts-stream-heading">Arts & Humanities Stream</h4>
+                    <div id="arts-table-container"></div>
                 </div>
             </div>
 
-            <div class="program-stream">
-                <h3 id="commerce-stream-heading">Commerce Stream</h3>
-                <div id="commerce-table-container">
-                </div>
+            <div class="education-subsection">
+                <h3 id="graduate-programs-main-heading">Graduate Programs (Postgraduate)</h3>
+                <p id="graduate-programs-intro-text"></p>
+                <div id="graduate-table-container"></div>
             </div>
 
-            <div class="program-stream">
-                <h3 id="arts-stream-heading">Arts & Humanities Stream</h3>
-                <div id="arts-table-container">
-                </div>
+            <div class="education-subsection">
+                <h3 id="emerging-careers-main-heading">Emerging Careers & Their Use</h3>
+                <div id="emerging-careers-table-container"></div>
             </div>
 
-
-        </section>
-
-        <section id="graduate-programs">
-            <h2 id="graduate-programs-main-heading">Graduate Programs (Postgraduate)</h2>
-            <p id="graduate-programs-intro-text"></p>
-            <div id="graduate-table-container">
-            </div>
-        </section>
-
-        <section id="emerging-careers">
-            <h2 id="emerging-careers-main-heading">Emerging Careers & Their Use</h2>
-            <div id="emerging-careers-table-container">
-            </div>
-        </section>
-
-        <section id="universities-nepal">
-            <h2 id="universities-nepal-heading">Nepal Universities - Programs, Criteria & Addresses</h2>
-            <div id="universities-nepal-table-container">
+            <div class="education-subsection">
+                <h3 id="universities-nepal-heading">Nepal Universities - Programs, Criteria & Addresses</h3>
+                <div id="universities-nepal-table-container"></div>
             </div>
         </section>
         <section id="admission-info">
             <h2 id="admission-info-main-heading">Admission Information</h2>
 
-            <div class="program-stream">
-                <h3 id="residency-admission-sub-heading">Residency Admission in the USA</h3>
-                <div id="residency-table-container">
-                </div>
-            </div>
-
-            <div class="program-stream">
+            <div id="mbbs-admission-section" class="admission-content-section">
                 <h3 id="mbbs-admission-nepal-sub-heading">MBBS Admission Process in Nepal (2025–26)</h3>
-                <div id="mbbs-admission-nepal-table-container">
-                </div>
+                <div id="mbbs-admission-nepal-table-container"></div>
             </div>
 
-            <div class="program-stream">
+            <div id="engineering-admission-section" class="admission-content-section">
                 <h3 id="engineering-admission-nepal-sub-heading">Engineering Admission Process in Nepal (Bachelor's
                     Level)</h3>
-                <div id="engineering-admission-nepal-table-container">
-                </div>
+                <div id="engineering-admission-nepal-table-container"></div>
+            </div>
+
+            <div id="graduate-admission-section" class="admission-content-section">
+                <h3 id="graduate-admission-sub-heading">General Graduate Admission Steps</h3>
+                <div id="graduate-admission-general-table-container"></div>
+            </div>
+
+            <div id="residency-admission-section" class="admission-content-section">
+                <h3 id="residency-admission-sub-heading">Residency Admission in the USA</h3>
+                <div id="residency-table-container"></div>
             </div>
 
             <div class="faq-section">
