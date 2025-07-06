@@ -56,6 +56,9 @@ const translations = {
       admission_info_main: "Admission Information", // Main Admission section heading
       residency_admission_sub: "Residency Admission in the USA", // SUB-HEADING directly under Admission Info
       mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)", // NEW MBBS Admission Sub-heading
+      // NEW: Engineering Admission Sub-heading
+      engineering_admission_nepal_sub:
+        "Engineering Admission Process in Nepal (Bachelor's Level)",
     },
     intro: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
@@ -354,6 +357,59 @@ const translations = {
         notes: "Duration: 5.5 years (including 1-year internship)",
       },
     ],
+    // NEW: Engineering Admission Nepal Data
+    engineering_admission_nepal_list: [
+      {
+        step: "1. Meet Eligibility Criteria",
+        description:
+          "Complete 10+2 Science (PCM) or equivalent with minimum 45–50% marks",
+        notes: "Required subjects: Physics, Chemistry, Mathematics",
+      },
+      {
+        step: "2. Choose University",
+        description:
+          "Options include Tribhuvan University (IOE), Kathmandu University (KU), Pokhara University, Purbanchal University",
+        notes: "Each has its own entrance and intake system",
+      },
+      {
+        step: "3. Register for Entrance Exam",
+        description: "Apply for IOE Entrance (Tribhuvan) or KUCAT (Kathmandu)",
+        notes: "Online registration via university portals",
+      },
+      {
+        step: "4. Pay Application Fee",
+        description:
+          "Typically NPR 1,500–2,000 via bank or digital wallets (eSewa, Khalti, ConnectIPS)",
+        notes: "Keep transaction ID or voucher for upload",
+      },
+      {
+        step: "5. Upload Documents",
+        description: "+2 transcript, photo, citizenship/passport, signature",
+        notes: "Format and size requirements vary by university",
+      },
+      {
+        step: "6. Take Entrance Exam",
+        description:
+          "Computer-based test covering Physics, Chemistry, Mathematics, English",
+        notes: "Held at designated centers like Pulchowk Campus (IOE)",
+      },
+      {
+        step: "7. Attend Counseling / Merit Allocation",
+        description:
+          "Based on entrance rank, choose preferred college and program",
+        notes: "Includes Civil, Computer, Electrical, Mechanical, etc.",
+      },
+      {
+        step: "8. Confirm Admission",
+        description: "Submit documents and pay initial fees",
+        notes: "Receive official admission letter",
+      },
+      {
+        step: "9. Begin Academic Session",
+        description: "Classes typically start in August–September",
+        notes: "Duration: 4 years (8 semesters)",
+      },
+    ],
   },
   np: {
     headings: {
@@ -374,6 +430,9 @@ const translations = {
       residency_admission_sub:
         "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
       mbbs_admission_nepal_sub: "नेपालमा MBBS भर्ना प्रक्रिया (२०२५–२६)", // NEW MBBS Admission Sub-heading
+      // NEW: Engineering Admission Sub-heading (Nepali)
+      engineering_admission_nepal_sub:
+        "नेपालमा इन्जिनियरिङ भर्ना प्रक्रिया (ब्याचलर स्तर)",
     },
     intro: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
@@ -672,6 +731,61 @@ const translations = {
         notes: "Duration: 5.5 years (including 1-year internship)",
       },
     ],
+    // NEW: Engineering Admission Nepal Data (Nepali)
+    engineering_admission_nepal_list: [
+      {
+        step: "1. योग्यता मापदण्ड पूरा गर्नुहोस्",
+        description:
+          "न्यूनतम ४५–५०% अंकका साथ १०+२ विज्ञान (PCM) वा सो सरहको शिक्षा पूरा गर्नुहोस्।",
+        notes: "आवश्यक विषयहरू: भौतिक विज्ञान, रसायन विज्ञान, गणित",
+      },
+      {
+        step: "2. विश्वविद्यालय छनौट गर्नुहोस्",
+        description:
+          "विकल्पहरूमा त्रिभुवन विश्वविद्यालय (IOE), काठमाडौं विश्वविद्यालय (KU), पोखरा विश्वविद्यालय, पूर्वाञ्चल विश्वविद्यालय समावेश छन्।",
+        notes: "प्रत्येकको आफ्नै प्रवेश र भर्ना प्रणाली छ।",
+      },
+      {
+        step: "3. प्रवेश परीक्षाको लागि दर्ता गर्नुहोस्",
+        description:
+          "IOE प्रवेश (त्रिभुवन) वा KUCAT (काठमाडौं) को लागि आवेदन दिनुहोस्।",
+        notes: "विश्वविद्यालय पोर्टल मार्फत अनलाइन दर्ता।",
+      },
+      {
+        step: "4. आवेदन शुल्क तिर्नुहोस्",
+        description:
+          "सामान्यतया बैंक वा डिजिटल वालेट (ईसेवा, खल्ती, कनेक्टआईपीएस) मार्फत NPR १,५००–२,०००।",
+        notes: "अपलोडका लागि लेनदेन ID वा भौचर राख्नुहोस्।",
+      },
+      {
+        step: "5. कागजातहरू अपलोड गर्नुहोस्",
+        description: "+२ ट्रान्सक्रिप्ट, फोटो, नागरिकता/राहदानी, हस्ताक्षर।",
+        notes: "ढाँचा र आकार आवश्यकताहरू विश्वविद्यालय अनुसार फरक हुन्छन्।",
+      },
+      {
+        step: "6. प्रवेश परीक्षा दिनुहोस्",
+        description:
+          "भौतिक विज्ञान, रसायन विज्ञान, गणित, अंग्रेजी कभर गर्ने कम्प्युटर-आधारित परीक्षा।",
+        notes:
+          "पुलचोक क्याम्पस (IOE) जस्ता तोकिएका केन्द्रहरूमा आयोजना गरिन्छ।",
+      },
+      {
+        step: "7. काउन्सिलिङ / योग्यता विनियोजनमा सहभागी हुनुहोस्",
+        description:
+          "प्रवेश परीक्षाको नतिजाको आधारमा, मनपर्ने कलेज र कार्यक्रम छनौट गर्नुहोस्।",
+        notes: "सिभिल, कम्प्युटर, इलेक्ट्रिकल, मेकानिकल, आदि समावेश छन्।",
+      },
+      {
+        step: "8. भर्ना पुष्टि गर्नुहोस्",
+        description: "कागजातहरू बुझाउनुहोस् र प्रारम्भिक शुल्क तिर्नुहोस्।",
+        notes: "विश्वविद्यालयबाट आधिकारिक भर्ना पत्र प्राप्त गर्नुहोस्।",
+      },
+      {
+        step: "9. शैक्षिक सत्र सुरु गर्नुहोस्",
+        description: "कक्षा सामान्यतया अगस्त–सेप्टेम्बरमा सुरु हुन्छ।",
+        notes: "अवधि: ४ वर्ष (८ सेमेस्टर)",
+      },
+    ],
   },
 };
 
@@ -772,6 +886,14 @@ function setLanguage(lang) {
     mbbsAdmissionNepalSubHeading.textContent =
       translations[lang].headings.mbbs_admission_nepal_sub;
 
+  // NEW: Sub-heading for Engineering Admission Nepal
+  const engineeringAdmissionNepalSubHeading = document.getElementById(
+    "engineering-admission-nepal-sub-heading"
+  );
+  if (engineeringAdmissionNepalSubHeading)
+    engineeringAdmissionNepalSubHeading.textContent =
+      translations[lang].headings.engineering_admission_nepal_sub;
+
   const introParagraph = document.getElementById("intro")?.querySelector("p");
   if (introParagraph) introParagraph.textContent = translations[lang].intro[0];
 
@@ -835,10 +957,17 @@ function setLanguage(lang) {
     lang
   );
 
+  // NEW: Populate Engineering Admission Nepal table
+  populateEngineeringAdmissionNepalTable(
+    "engineering-admission-nepal-table-container",
+    translations[lang].engineering_admission_nepal_list,
+    lang
+  );
+
   console.log("Language switched to:", lang);
 }
 
-// Function to populate generic tables (used for Undergraduate, Graduate, Emerging Careers, Residency, MBBS Nepal)
+// Function to populate generic tables (used for Undergraduate, Graduate, Emerging Careers, Residency, MBBS Nepal, Engineering Nepal)
 function populateProgramsTable(containerId, data, lang) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -932,6 +1061,14 @@ function populateMBBSAdmissionNepalTable(containerId, data, lang) {
   populateProgramsTable(containerId, data, lang);
   console.log(
     `MBBS Admission Nepal table populated for ${containerId} (via generic).`
+  );
+}
+
+// NEW: Function for Engineering Admission Nepal table (uses generic populateProgramsTable)
+function populateEngineeringAdmissionNepalTable(containerId, data, lang) {
+  populateProgramsTable(containerId, data, lang);
+  console.log(
+    `Engineering Admission Nepal table populated for ${containerId} (via generic).`
   );
 }
 
