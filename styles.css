@@ -1,17 +1,38 @@
+/* Universal Box Sizing */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f7f7f7;
     color: #333;
+    line-height: 1.6;
+    /* Improved readability */
 }
 
 header {
     background-color: #763626;
     color: white;
-    padding: 20px;
+    padding: 15px 10px;
+    /* Adjusted for mobile */
     text-align: center;
 }
 
+header h1 {
+    font-size: 1.8em;
+    /* Adjusted for mobile */
+    margin: 0;
+}
+
+/* Navigation - Desktop styles (base) */
 nav ul {
     display: flex;
     justify-content: center;
@@ -19,13 +40,11 @@ nav ul {
     margin: 0;
     padding: 0;
     position: relative;
-    /* Needed for dropdown positioning */
 }
 
 nav li {
     margin: 0 15px;
     position: relative;
-    /* For dropdown */
 }
 
 nav a {
@@ -34,38 +53,33 @@ nav a {
     font-weight: bold;
     transition: color 0.3s;
     padding: 10px 0;
-    /* Add padding for better click area */
     display: block;
-    /* Make the whole area clickable */
+    white-space: nowrap;
+    /* Prevent breaking nav links */
 }
 
 nav a:hover {
     color: #ffd700;
 }
 
-/* Dropdown menu for Admission Information */
+/* Dropdown menu for Admission Information (Desktop) */
 .dropdown-menu {
     display: none;
-    /* Hidden by default */
     position: absolute;
     background-color: #763626;
-    /* Same as header for continuity */
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     list-style: none;
     padding: 0;
     margin-top: 5px;
-    /* Space below parent nav item */
     border-radius: 5px;
     left: 50%;
     transform: translateX(-50%);
-    /* Center the dropdown */
 }
 
 .dropdown-menu.active {
     display: block;
-    /* Show when active class is added */
 }
 
 .dropdown-menu li {
@@ -79,12 +93,10 @@ nav a:hover {
     display: block;
     text-align: left;
     font-weight: normal;
-    /* Sub-links can be less bold */
 }
 
 .dropdown-menu a:hover {
     background-color: #a04c38;
-    /* Slightly lighter shade on hover */
     color: #ffd700;
     border-radius: 5px;
 }
@@ -97,21 +109,36 @@ nav a:hover {
 
 main {
     padding: 30px;
+    /* Base padding */
 }
 
 section {
     margin-bottom: 50px;
+    /* Base margin */
+    padding: 15px;
+    /* Added internal padding for sections */
 }
 
+/* Gallery */
 .gallery {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    /* Center images */
+}
+
+.gallery figure {
+    text-align: center;
+    margin: 0;
+    /* Reset margin from figure default */
 }
 
 .gallery img {
-    width: 300px;
+    max-width: 100%;
+    /* Make images responsive */
     height: auto;
+    /* Maintain aspect ratio */
     border: 3px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -121,29 +148,29 @@ section {
     transform: scale(1.05);
 }
 
+.gallery figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+}
+
 footer {
     background-color: #763626;
     color: white;
     text-align: center;
     padding: 15px;
-}
-
-.gallery figure {
-    text-align: center;
-}
-
-.gallery figcaption {
-    margin-top: 8px;
-    font-style: italic;
-    color: #555;
+    font-size: 0.9em;
 }
 
 .datetime-bar {
     background-color: #f4f4f4;
     color: #333;
     text-align: center;
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px;
+    /* Adjusted padding */
+    font-size: 0.9rem;
+    /* Adjusted font size */
     font-weight: bold;
     border-bottom: 1px solid #ccc;
 }
@@ -156,25 +183,18 @@ footer {
 .language-toggle button {
     background-color: #ddd;
     border: none;
-    padding: 8px 15px;
-    margin: 0 5px;
+    padding: 6px 12px;
+    /* Adjusted padding */
+    margin: 0 3px;
+    /* Adjusted margin */
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 0.9em;
 }
 
 .language-toggle button:hover {
     background-color: #bbb;
-}
-
-#bs-date {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid #ccc;
 }
 
 /* General table styles */
@@ -183,6 +203,28 @@ footer {
     border-collapse: collapse;
     margin-top: 15px;
     margin-bottom: 30px;
+    /* This makes the table itself a block element that can be scrolled */
+    display: block;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    border: 1px solid #ddd;
+    /* Added border to table for clarity */
+    border-radius: 8px;
+    /* Rounded corners for table */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    /* Subtle shadow for tables */
+}
+
+.programs-table thead,
+.programs-table tbody,
+.programs-table th,
+.programs-table td,
+.programs-table tr {
+    /* Ensure these are still treated as table elements within the overflow context */
+    white-space: normal;
+    /* Allow text to wrap within table cells by default */
 }
 
 .programs-table th,
@@ -190,13 +232,38 @@ footer {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
+    vertical-align: top;
+    /* Minimum width to prevent excessive squishing, adjust as needed */
+    min-width: 120px;
 }
 
 .programs-table th {
     background-color: #763626;
     color: white;
     font-weight: bold;
+    /* Make header sticky when scrolling horizontally */
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    /* Ensure it's above scrolling content */
 }
+
+/* Style for the first cell in the table body to also be sticky */
+.programs-table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    /* Ensure it stands out against scrolling content */
+    z-index: 5;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1);
+    /* Optional: add a subtle shadow */
+}
+
+.programs-table tbody tr:nth-child(even) td:first-child {
+    background-color: #f2f2f2;
+    /* Maintain stripe for sticky first cell */
+}
+
 
 .programs-table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -206,102 +273,248 @@ footer {
     background-color: #ddd;
 }
 
-/* Education Section Specific Styles */
-#education .education-subsection {
-    margin-bottom: 40px;
-    /* Space between sub-sections like After 12th, Graduate, etc. */
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-}
-
-#education h2 {
+/* Headings for sections and sub-sections */
+section h2 {
     color: #763626;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    text-align: center;
-}
-
-#education h3 {
-    margin-top: 0px;
-    /* Adjust top margin for sub-headings */
     margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #763626;
-    border-bottom: 2px solid #f2f2f2;
+    font-size: 2em;
+    text-align: center;
     padding-bottom: 10px;
+    border-bottom: 2px solid #f2f2f2;
 }
 
-#education h4 {
-    /* For Science Stream, Commerce Stream, etc. */
+section h3 {
     margin-top: 25px;
     margin-bottom: 15px;
-    font-size: 1.4em;
+    font-size: 1.6em;
+    color: #763626;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+section h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
     color: #5a2a20;
 }
 
-
-/* Admission Information Section (Non-tabbed, direct sections) */
-#admission-info h2 {
-    color: #763626;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    text-align: center;
-}
-
-#admission-info .admission-content-section {
-    margin-bottom: 40px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
+/* Specific section adjustments */
+.education-subsection,
+.admission-content-section,
+.faq-section {
     background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    /* Reduced margin */
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
-#admission-info .admission-content-section h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #763626;
-    border-bottom: 2px solid #f2f2f2;
-    padding-bottom: 10px;
-}
-
-
-/* FAQ Section Styles (remain the same) */
-.faq-section {
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.faq-section h2 {
-    color: #763626;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 2em;
-}
-
-.faq-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
 .faq-question {
-    color: #763626;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .faq-answer {
-    color: #555;
-    font-size: 1em;
-    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 5px;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    /* Navigation - Vertical Stack with Toggle */
+    nav ul {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items */
+        text-align: center;
+        width: 100%;
+        /* Ensure ul takes full width */
+    }
+
+    nav li {
+        margin: 5px 0;
+        /* Less horizontal margin */
+        width: 90%;
+        /* Give some padding on sides */
+    }
+
+    nav a {
+        padding: 8px 10px;
+        /* More vertical padding for tap target */
+        font-size: 0.9em;
+        /* Smaller font */
+    }
+
+    /* Hide dropdown initially on small screens */
+    .dropdown-menu {
+        position: static;
+        /* Remove absolute positioning */
+        width: 100%;
+        /* Take full width */
+        box-shadow: none;
+        /* Remove shadow */
+        border-radius: 0;
+        /* Remove border-radius */
+        background-color: #6a3022;
+        /* Slightly darker background for clarity */
+        margin-top: 0;
+        transform: none;
+        /* Remove transform */
+    }
+
+    /* Show/hide mechanism for dropdown (controlled by JS) */
+    .dropdown-menu:not(.active) {
+        display: none;
+    }
+
+    .dropdown-arrow {
+        display: inline-block;
+        /* Ensure arrow is always visible with the toggle */
+        margin-left: 5px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Main content padding */
+    main {
+        padding: 15px;
+    }
+
+    section {
+        margin-bottom: 30px;
+        padding: 15px 10px;
+        /* Slightly more compact padding */
+    }
+
+    /* Headings for mobile */
+    section h2 {
+        font-size: 1.6em;
+        /* Smaller main section headings */
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+    }
+
+    section h3 {
+        font-size: 1.3em;
+        /* Smaller sub-section headings */
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+    }
+
+    section h4 {
+        font-size: 1.0em;
+        /* Smaller stream headings */
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    /* Gallery - Single column layout */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        /* Reduced gap */
+    }
+
+    .gallery img {
+        width: 95%;
+        /* Occupy most of the width, leave some padding */
+        border-width: 2px;
+        /* Thinner border */
+    }
+
+    .gallery figcaption {
+        font-size: 0.85em;
+    }
+
+
+    /* Table adjustments already handled by `display: block; overflow-x: auto;` */
+    /* Sticky header/first column background is good */
+    .programs-table th,
+    .programs-table td {
+        padding: 8px;
+        /* Slightly less padding in cells */
+        font-size: 0.9em;
+        /* Smaller text in table cells */
+    }
+
+    /* Specific section adjustments */
+    .education-subsection,
+    .admission-content-section,
+    .faq-section {
+        margin-bottom: 25px;
+        /* Further reduced margin */
+        padding: 15px;
+    }
+
+    .faq-question {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .faq-answer {
+        font-size: 0.85em;
+    }
+
+    .datetime-bar {
+        font-size: 0.8rem;
+    }
+
+    .language-toggle button {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav a {
+        font-size: 0.8em;
+        padding: 6px 8px;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    section h3 {
+        font-size: 1.1em;
+    }
+
+    section h4 {
+        font-size: 0.9em;
+    }
+
+    .programs-table th,
+    .programs-table td {
+        padding: 6px;
+        font-size: 0.85em;
+    }
+
+    .faq-question {
+        font-size: 0.95em;
+    }
+
+    .faq-answer {
+        font-size: 0.8em;
+    }
 }

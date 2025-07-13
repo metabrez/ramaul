@@ -61,40 +61,44 @@ setInterval(updateDateTime, 1000); // This will keep updating
 const translations = {
   en: {
     headings: {
-      intro: "Introduction",
+      // REMOVED: intro: "Introduction",
       home: "Home",
-      history: "History",
+      // REMOVED: history: "History",
+      intro_sub: "Introduction", // New sub-heading for original Intro content
+      history_sub: "History", // New sub-heading for original History content
       gallery: "Gallery",
       map: "Map of Ramaul",
-      education_main: "Education in Nepal", // New main heading for education
-      after12_main: "Undergraduate Programs After 12th", // Now a sub-heading under Education
+      education_main: "Education in Nepal",
+      after12_main: "Undergraduate Programs After 12th",
       science_stream: "Science Stream",
       commerce_stream: "Commerce Stream",
       management_stream: "Management Stream",
       arts_stream: "Arts & Humanities Stream",
-      graduate_programs_main: "Graduate Programs (Postgraduate)", // Now a sub-heading under Education
-      emerging_careers_main: "Emerging Careers & Their Use", // Now a sub-heading under Education
-      universities_nepal: "Nepal Universities - Programs, Criteria & Addresses", // Now a sub-heading under Education
-      admission_info_main: "Admission Information", // Main section heading
-      nav_link_mbbs: "MBBS Admission", // Nav dropdown link text
-      nav_link_engineering: "Engineering Admission", // Nav dropdown link text
-      nav_link_graduate: "Graduate Admission", // Nav dropdown link text
-      nav_link_residency: "Residency in USA", // Nav dropdown link text
-      mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)", // Sub-heading for content
+      graduate_programs_main: "Graduate Programs (Postgraduate)",
+      emerging_careers_main: "Emerging Careers & Their Use",
+      universities_nepal: "Nepal Universities - Programs, Criteria & Addresses",
+      admission_info_main: "Admission Information",
+      nav_link_mbbs: "MBBS Admission",
+      nav_link_engineering: "Engineering Admission",
+      nav_link_graduate: "Graduate Admission",
+      nav_link_residency: "Residency in USA",
+      mbbs_admission_nepal_sub: "MBBS Admission Process in Nepal (2025–26)",
       engineering_admission_nepal_sub:
-        "Engineering Admission Process in Nepal (Bachelor's Level)", // Sub-heading for content
-      graduate_admission_sub: "General Graduate Admission Steps", // Sub-heading for content
-      residency_admission_sub: "Residency Admission in the USA", // Sub-heading for content
+        "Engineering Admission Process in Nepal (Bachelor's Level)",
+      graduate_admission_sub: "General Graduate Admission Steps",
+      residency_admission_sub: "Residency Admission in the USA",
       faq_main: "Frequently Asked Questions (FAQs)",
     },
-    intro: [
+    // The content for original intro and history is now directly accessed from specific IDs within 'home'
+    intro_content: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
     ],
-    home: [
+    home_content: [
+      // Combined all home related content here for clarity
       "Geographically, Ramaul lies at 26.80°N 86.09°E and is surrounded by Makhanaha, Basbitta, Manpur, Madar, and the Kamala River. The population ranges between 20,000–25,000, predominantly Muslim, with a unique dialect called Mithila Urdu spoken locally.",
       "The village is divided into five areas: Purab Tola, Uttar Tola, Paschim Tola, Dakshin Tola, and Mansoori Tola. Ramaul Chowk is the central hub, home to the popular Ahmadiya Tea Shop and Eidgah grounds for community prayers.",
     ],
-    history: [
+    history_content: [
       "Previously part of the Village Development Committee, Ramaul now falls under Siraha Municipality Wards 3, 4, and 5. It has a rich tradition of Islamic education with six madrasahs, ten mosques, and both government and private schools. The Kamala River flowing nearby adds to its scenic and strategic significance.",
     ],
     after12_programs: {
@@ -622,577 +626,11 @@ const translations = {
   },
   np: {
     headings: {
-      intro: "परिचय",
+      // REMOVED: intro: "परिचय",
       home: "गृह",
-      history: "इतिहास",
-      gallery: "ग्यालरी",
-      map: "रमौल को नक्सा",
-      education_main: "नेपालमा शिक्षा", // New main heading (Nepali)
-      after12_main: "१२ कक्षा पछि स्नातक कार्यक्रमहरू",
-      science_stream: "विज्ञान संकाय",
-      commerce_stream: "वाणिज्य संकाय",
-      management_stream: "व्यवस्थापन संकाय",
-      arts_stream: "कला र मानविकी संकाय",
-      graduate_programs_main: "स्नातकोत्तर कार्यक्रमहरू",
-      emerging_careers_main: "उभरदो करियर र तिनीहरूको प्रयोग",
-      universities_nepal:
-        "नेपालका विश्वविद्यालयहरू - कार्यक्रम, मापदण्ड र ठेगानाहरू",
-      admission_info_main: "प्रवेश जानकारी",
-      nav_link_mbbs: "MBBS भर्ना",
-      nav_link_engineering: "इन्जिनियरिङ भर्ना",
-      nav_link_graduate: "स्नातकोत्तर भर्ना",
-      nav_link_residency: "युएसएमा रेसिडेन्सी",
-      mbbs_admission_nepal_sub: "नेपालमा MBBS भर्ना प्रक्रिया (२०२५–२६)",
-      engineering_admission_nepal_sub:
-        "नेपालमा इन्जिनियरिङ भर्ना प्रक्रिया (ब्याचलर स्तर)",
-      graduate_admission_sub: "स्नातकोत्तर भर्नाका सामान्य चरणहरू",
-      residency_admission_sub:
-        "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
-      faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)",
-    },
-    intro: [
-      "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
-    ],
-    home: [
-      "भौगोलिक रूपमा, रमौल २६.८०°N ८६.०९°E मा अवस्थित छ र मखानहा, बासबिट्टा, मनपुर, मदार र कमला नदीले घेरिएको छ। यसको जनसंख्या २०,०००-२५,००० बीचमा छ, जसमा मुस्लिम समुदायको बाहुल्यता छ, र स्थानीय रूपमा मिथिला उर्दू नामक एक अद्वितीय बोली बोलिन्छ।",
-      "गाउँ पाँच भागमा विभाजित छ: पूरब टोल, उत्तर टोल, पश्चिम टोल, दक्षिण टोल र मंसूरी टोल। रमौल चोक केन्द्रीय केन्द्र हो, जहाँ लोकप्रिय अहमदीया चिया पसल र सामुदायिक प्रार्थनाका लागि ईदगाह मैदानहरू छन्।",
-    ],
-    history: [
-      "पहिले गाउँ विकास समिति अन्तर्गत पर्ने रमौल अहिले सिराहा नगरपालिका वार्ड ३, ४, र ५ मा पर्दछ। यसमा इस्लामिक शिक्षाको समृद्ध परम्परा छ, जसमा छवटा मदरसा, दश मस्जिद, र सरकारी तथा निजी विद्यालयहरू छन्। नजिकै बग्ने कमला नदीले यसको रमणीय र रणनीतिक महत्त्व बढाउँछ।",
-    ],
-    after12_programs: {
-      science: [
-        {
-          program: "बी.टेक / बी.ई",
-          specializations: "कम्प्युटर विज्ञान, मेकानिकल, सिभिल, इलेक्ट्रोनिक्स",
-          job_scope:
-            "सफ्टवेयर डेभलपर, DevOps इन्जिनियर, डेटा एनालिस्ट, मेकानिकल इन्जिनियर",
-        },
-        {
-          program: "बी.एससी",
-          specializations: "भौतिक विज्ञान, रसायन विज्ञान, जीवविज्ञान, IT, गणित",
-          job_scope:
-            "ल्याब टेक्निसियन, अनुसन्धान सहायक, डेटा साइन्टिस्ट, वातावरणीय विश्लेषक",
-        },
-        {
-          program: "MBBS / BDS",
-          specializations: "चिकित्सा, दन्तचिकित्सा",
-          job_scope: "डाक्टर, सर्जन, दन्त चिकित्सक, मेडिकल अनुसन्धानकर्ता",
-        },
-        {
-          program: "बी.फार्म",
-          specializations: "फार्मेसी",
-          job_scope:
-            "फार्मासिस्ट, ड्रग सेफ्टी एसोसिएट, क्लिनिकल अनुसन्धानकर्ता",
-        },
-        {
-          program: "BCA",
-          specializations: "कम्प्युटर अनुप्रयोगहरू",
-          job_scope: "वेब डेभलपर, एप डेभलपर, QA टेस्टर",
-        },
-      ],
-      commerce: [
-        {
-          program: "बी.कम",
-          specializations: "लेखा, वित्त, कर",
-          job_scope: "लेखापाल, अडिटर, वित्तीय विश्लेषक, कर सल्लाहकार",
-        },
-        {
-          program: "BBA / BBM",
-          specializations: "व्यवसाय प्रशासन, व्यवस्थापन",
-          job_scope: "व्यवसाय विश्लेषक, HR कार्यकारी, मार्केटिङ प्रबन्धक",
-        },
-        {
-          program: "CA / CS",
-          specializations: "चार्टर्ड अकाउन्ट्यान्सी, कम्पनी सेक्रेटरी",
-          job_scope:
-            "चार्टर्ड एकाउन्टेन्ट, अनुपालन अधिकारी, कर्पोरेट सल्लाहकार",
-        },
-        {
-          program: "BBS",
-          specializations: "व्यवसाय अध्ययन, मार्केटिङ, वित्त",
-          job_scope: "व्यवसाय प्रबन्धक, मार्केटिङ कार्यकारी, वित्तीय सल्लाहकार",
-        },
-      ],
-      management: [],
-      arts: [
-        {
-          program: "बी.ए",
-          specializations: "मनोविज्ञान, इतिहास, राजनीति विज्ञान, समाजशास्त्र",
-          job_scope:
-            "काउन्सिलर, इतिहासकार, निजामती सेवा, गैरसरकारी संस्था कार्यकर्ता",
-        },
-        {
-          program: "BFA",
-          specializations: "ललित कला",
-          job_scope: "चित्रकार, ग्राफिक डिजाइनर, कला निर्देशक",
-        },
-        {
-          program: "BJMC",
-          specializations: "पत्रकारिता र जनसञ्चार",
-          job_scope: "पत्रकार, समाचार वाचक, PR कार्यकारी",
-        },
-        {
-          program: "LLB (Integrated)",
-          specializations: "कानून",
-          job_scope: "वकिल, कानूनी सल्लाहकार, कर्पोरेट सल्लाहकार",
-        },
-      ],
-    },
-    graduate_programs_intro:
-      "स्नातक डिग्री पूरा गरेपछि, विद्यार्थीहरू थप विशेषज्ञता हासिल गर्न मास्टरको कार्यक्रमहरू अध्ययन गर्न सक्छन्:",
-    graduate_programs_list: [
-      {
-        program: "एम.टेक / एम.ई",
-        field: "इन्जिनियरिङ",
-        job_scope: "वरिष्ठ विकासकर्ता, प्रणाली आर्किटेक्ट, R&D इन्जिनियर",
-      },
-      {
-        program: "एम.एससी",
-        field: "विज्ञान",
-        job_scope: "अनुसन्धान वैज्ञानिक, डेटा एनालिस्ट, अकादमिक लेक्चरर",
-      },
-      {
-        program: "एमबीए",
-        field: "व्यवसाय",
-        job_scope: "उत्पादन प्रबन्धक, रणनीति सल्लाहकार, सञ्चालन प्रमुख",
-      },
-      {
-        program: "एम.कम",
-        field: "वाणिज्य",
-        job_scope: "लगानी बैंकर, वित्तीय योजनाकार, अर्थशास्त्री",
-      },
-      {
-        program: "एम.ए",
-        field: "मानविकी",
-        job_scope: "नीति विश्लेषक, शिक्षक, सामग्री रणनीतिकार",
-      },
-      {
-        program: "MCA",
-        field: "कम्प्युटर अनुप्रयोगहरू",
-        job_scope:
-          "सफ्टवेयर आर्किटेक्ट, क्लाउड इन्जिनियर, साइबर सुरक्षा विश्लेषक",
-      },
-      {
-        program: "LLM",
-        field: "कानून",
-        job_scope:
-          "कानूनी सल्लाहकार, न्यायाधीश, अन्तर्राष्ट्रिय कानून विशेषज्ञ",
-      },
-      {
-        program: "एम.फार्म",
-        field: "फार्मेसी",
-        job_scope: "क्लिनिकल फार्मासिस्ट, नियामक मामिला प्रबन्धक",
-      },
-    ],
-    emerging_careers_list: [
-      {
-        career_title: "ग्राहक सफलता इन्जिनियर",
-        primary_use:
-          "प्राविधिक उत्पादनहरूसँग ग्राहक सन्तुष्टि सुनिश्चित गर्दछ; समर्थन र इन्जिनियरिङ बीच पुलको काम गर्छ।",
-      },
-      {
-        career_title: "डिजिटल पहिचान प्रबन्धक",
-        primary_use:
-          "सुरक्षित डिजिटल पहिचानहरू प्रबन्ध गर्दछ; साइबर सुरक्षा र डेटा गोपनीयताको लागि महत्त्वपूर्ण।",
-      },
-      {
-        career_title: "RPA विकासकर्ता",
-        primary_use:
-          "दोहोरिने कार्यहरू स्वचालित गर्न बोटहरू डिजाइन गर्दछ; सञ्चालनमा दक्षता बढाउँछ।",
-      },
-      {
-        career_title: "एआर अनुभव प्रबन्धक",
-        primary_use:
-          "इमर्सिभ संवर्धित वास्तविकता अनुभवहरू सिर्जना गर्दछ; खुद्रा, शिक्षामा प्रयोग गरिन्छ।",
-      },
-      {
-        career_title: "प्रमुख रिमोट कार्य अधिकारी",
-        primary_use:
-          "रिमोट कार्य रणनीतिहरूको निरीक्षण गर्दछ; हाइब्रिड टोलीहरूमा उत्पादकत्व र संस्कृति बढाउँछ।",
-      },
-      {
-        career_title: "नवीकरणीय ऊर्जा इन्जिनियर",
-        primary_use:
-          "दिगो ऊर्जा समाधानहरू विकास गर्दछ; जलवायु र पूर्वाधार लक्ष्यहरूको लागि महत्त्वपूर्ण।",
-      },
-      {
-        career_title: "साइबर सुरक्षा इन्जिनियर",
-        primary_use:
-          "साइबर खतराहरूबाट प्रणालीहरूलाई सुरक्षित गर्दछ; डेटा अखण्डता र अनुपालनका लागि आवश्यक।",
-      },
-      {
-        career_title: "एआई प्रम्प्ट इन्जिनियर",
-        primary_use:
-          "एआई मोडेलहरूको लागि प्रभावकारी प्रम्प्टहरू सिर्जना गर्दछ; आउटपुटहरूको शुद्धता र प्रासंगिकता सुधार गर्दछ।",
-      },
-      {
-        career_title: "ब्लकचेन विशेषज्ञ",
-        primary_use:
-          "विकेन्द्रीकृत प्रणालीहरू निर्माण गर्दछ; वित्त, आपूर्ति श्रृंखला र सुरक्षामा क्रान्ति ल्याउँछ।",
-      },
-      {
-        career_title: "दिगोपन विश्लेषक",
-        primary_use:
-          "वातावरणीय प्रभावको मूल्याङ्कन गर्दछ; पर्यावरण-मैत्री व्यवसायिक निर्णयहरू मार्गदर्शन गर्दछ।",
-      },
-    ],
-    universities_nepal_list: [
-      {
-        "University Name": "त्रिभुवन विश्वविद्यालय (TU)",
-        "Undergraduate Programs": "BSc CSIT, BCA, BBS, BBA, BE, MBBS, BEd, BA",
-        "Postgraduate Programs": "MSc, MBA, MPA, MEd, MTech, MPH",
-        "Doctorate Programs":
-          "PhD in Botany, Gender Studies, Neurosurgery, Management",
-        "Admission Criteria":
-          "१०+२ ≥४५–५०% सहित; प्राविधिक/चिकित्साको लागि प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "काठमाडौं विश्वविद्यालय (KU)",
-        "Undergraduate Programs": "BTech, BSc CS, BBA, MBBS, BPharm, BE",
-        "Postgraduate Programs": "MSc, MBA, MPharm, MTech, MPH",
-        "Doctorate Programs":
-          "PhD in Management, Neurology, Urology, Cardiology",
-        "Admission Criteria":
-          "१०+२ विज्ञान ≥५०% सहित; KUCAT प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "पोखरा विश्वविद्यालय",
-        "Undergraduate Programs": "BBA, BE, BCSIT, BHM, BSc Nursing",
-        "Postgraduate Programs": "MBA, MSc, MPH, MEd",
-        "Doctorate Programs": "PhD in Management, Engineering (limited)",
-        "Admission Criteria":
-          "१०+२ ≥४५% सहित; प्रवेश परीक्षा र योग्यता-आधारित छनोट",
-      },
-      {
-        "University Name": "पूर्वाञ्चल विश्वविद्यालय",
-        "Undergraduate Programs": "BE, BBA, BSc Nursing, BPharm, BEd",
-        "Postgraduate Programs": "MBA, MSc, MEd",
-        "Doctorate Programs": "PhD in Education, Management",
-        "Admission Criteria":
-          "१०+२ विज्ञान/व्यवस्थापन; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "कृषि तथा वन विश्वविद्यालय",
-        "Undergraduate Programs": "BSc Agriculture, BSc Forestry, BVSc & AH",
-        "Postgraduate Programs": "MSc Agriculture, MSc Forestry",
-        "Doctorate Programs": "PhD in Forestry, Agriculture",
-        "Admission Criteria":
-          "१०+२ विज्ञान (जीवविज्ञान); प्रवेश परीक्षा; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "सुदूरपश्चिमाञ्चल विश्वविद्यालय",
-        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
-        "Postgraduate Programs": "MSc, MBA, MA, MEd",
-        "Doctorate Programs": "PhD in Humanities, Education",
-        "Admission Criteria":
-          "१०+२ वा सो सरह; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "मध्यपश्चिमाञ्चल विश्वविद्यालय",
-        "Undergraduate Programs": "BSc, BBA, BEd, BA, BE",
-        "Postgraduate Programs": "MSc, MBA, MA, MEd",
-        "Doctorate Programs": "PhD in Social Sciences, Education",
-        "Admission Criteria":
-          "१०+२ वा सो सरह; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "लुम्बिनी बौद्ध विश्वविद्यालय",
-        "Undergraduate Programs": "BA in Buddhist Studies",
-        "Postgraduate Programs": "MA in Buddhist Philosophy",
-        "Doctorate Programs": "PhD in Buddhist Philosophy, Culture",
-        "Admission Criteria":
-          "BA को लागि १०+२; MA को लागि स्नातक; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "नेपाल संस्कृत विश्वविद्यालय",
-        "Undergraduate Programs": "BA Sanskrit, आचार्य",
-        "Postgraduate Programs": "MA Sanskrit",
-        "Doctorate Programs": "PhD in Sanskrit Literature, Philosophy",
-        "Admission Criteria": "१०+२ वा सो सरह; संस्कृत पृष्ठभूमि रुचाइएको",
-      },
-      {
-        "University Name": "राजर्षि जनक विश्वविद्यालय",
-        "Undergraduate Programs": "BBA, BEd, BA",
-        "Postgraduate Programs": "MBA, MA",
-        "Doctorate Programs": "PhD in Education, Management",
-        "Admission Criteria": "१०+२ वा सो सरह; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "मदन भण्डारी विज्ञान तथा प्रविधि विश्वविद्यालय",
-        "Undergraduate Programs": "BSc IT, BE Computer, BTech AI & Robotics",
-        "Postgraduate Programs": "MSc AI, MSc Robotics",
-        "Doctorate Programs": "PhD in Forest Biomaterials Science",
-        "Admission Criteria":
-          "१०+२ विज्ञान; प्रवेश परीक्षा; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "मधेस कृषि विश्वविद्यालय",
-        "Undergraduate Programs": "BSc Agriculture, BSc Horticulture",
-        "Postgraduate Programs": "MSc Agriculture",
-        "Doctorate Programs": "PhD in Agricultural Sciences",
-        "Admission Criteria":
-          "१०+२ विज्ञान (जीवविज्ञान); प्रवेश परीक्षा; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "लुम्बिनी प्राविधिक विश्वविद्यालय",
-        "Undergraduate Programs": "BSc IT, BE Civil, BBA",
-        "Postgraduate Programs": "MBA, MSc",
-        "Doctorate Programs": "PhD in Technology, Management",
-        "Admission Criteria":
-          "१०+२ विज्ञान/व्यवस्थापन; प्राविधिकको लागि प्रवेश; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "मनमोहन प्राविधिक विश्वविद्यालय",
-        "Undergraduate Programs": "BE Civil, BSc Computer, BSc IT",
-        "Postgraduate Programs": "MSc Engineering, MBA",
-        "Doctorate Programs": "PhD in Engineering, IT",
-        "Admission Criteria":
-          "१०+२ विज्ञान; प्रवेश परीक्षा; PhD को लागि मास्टर",
-      },
-      {
-        "University Name": "नेपाल खुला विश्वविद्यालय (NOU)",
-        "Undergraduate Programs": "BEd, BBA, BA (दूरी मोड)",
-        "Postgraduate Programs": "MEd, MBA, MA (दूरी मोड)",
-        "Doctorate Programs": "PhD in Education, Management (दूरी मोड)",
-        "Admission Criteria":
-          "खुला/दूरी ढाँचा; UG को लागि १०+२; PG को लागि स्नातक;",
-      },
-    ],
-    residency_admission_list: [
-      {
-        step: "1. Graduate from a Recognized Medical School",
-        description:
-          "Your school must be listed in the World Directory of Medical Schools and eligible for ECFMG certification.",
-        notes: "Check for ECFMG “Sponsor Notes”",
-      },
-      {
-        step: "2. Obtain ECFMG Certification",
-        description:
-          "Required for IMGs to apply for residency. Includes document verification and passing USMLE exams.",
-        notes: "Start during 3rd year of med school if possible",
-      },
-      {
-        step: "3. Pass USMLE Step 1 & Step 2 CK",
-        description:
-          "These exams assess medical knowledge and clinical skills. High scores improve match chances.",
-        notes: "Aim for first-attempt success",
-      },
-      {
-        step: "4. Gain U.S. Clinical Experience",
-        description:
-          "Hands-on experience in U.S. hospitals through electives or observerships.",
-        notes: "Helps with letters of recommendation",
-      },
-      {
-        step: "5. Prepare Application Materials",
-        description:
-          "Includes personal statement, CV, MSPE, transcripts, and letters of recommendation.",
-        notes: "Tailor to your specialty and strengths",
-      },
-      {
-        step: "6. Apply via ERAS",
-        description:
-          "Use the Electronic Residency Application Service to submit applications to programs.",
-        notes: "Opens in June; submit early for best results",
-      },
-      {
-        step: "7. Register for NRMP Match",
-        description:
-          "The National Resident Matching Program pairs applicants with residency programs.",
-        notes: "Match Day is typically in March",
-      },
-      {
-        step: "8. Attend Interviews",
-        description:
-          "Programs invite selected applicants for interviews between October and January.",
-        notes: "Practice communication and professionalism",
-      },
-      {
-        step: "9. Rank Programs",
-        description: "Submit your ranked list of preferred programs to NRMP.",
-        notes: "Programs also rank applicants",
-      },
-      {
-        step: "10. Match Results",
-        description:
-          "If matched, you begin residency in July. If unmatched, you may enter SOAP or reapply next year.",
-        notes: "SOAP = Supplemental Offer and Acceptance Program",
-      },
-    ],
-    mbbs_admission_nepal_list: [
-      {
-        step: "1. Meet Eligibility Criteria",
-        description:
-          "Complete 10+2 with Physics, Chemistry, Biology; minimum 50% aggregate in PCB",
-        notes: "Age ≥ 17 years by Dec 31 of admission year",
-      },
-      {
-        step: "2. Qualify NEET-UG",
-        description:
-          "Mandatory for Indian students to apply to Nepalese medical colleges",
-        notes: "NEET score valid for 3 years",
-      },
-      {
-        step: "3. Register for MECEE-BL",
-        description:
-          "Common entrance exam conducted by Nepal’s Medical Education Commission",
-        notes: "Required for top colleges like IoM, BPKIHS, PAHS",
-      },
-      {
-        step: "4. Choose Medical University",
-        description:
-          "Select NMC-approved colleges such as KIST, Kathmandu Medical, Nobel, Lumbini",
-        notes: "Consider fees, location, faculty, and recognition",
-      },
-      {
-        step: "5. Submit Application",
-        description:
-          "Apply online via MECEE portal or directly to private colleges",
-        notes: "Include academic records, NEET score, ID proof",
-      },
-      {
-        step: "6. Attend Counseling / Interview",
-        description: "Based on MECEE rank or direct admission route",
-        notes: "Helps finalize college and seat allocation",
-      },
-      {
-        step: "7. Confirm Admission",
-        description: "Pay initial fees and submit required documents",
-        notes: "Receive admission letter from the university",
-      },
-      {
-        step: "8. Begin Academic Session",
-        description: "Classes typically start in August–September",
-        notes: "Duration: 5.5 years (including 1-year internship)",
-      },
-    ],
-    engineering_admission_nepal_list: [
-      {
-        step: "1. Meet Eligibility Criteria",
-        description:
-          "Complete 10+2 Science (PCM) or equivalent with minimum 45–50% marks",
-        notes: "Required subjects: Physics, Chemistry, Mathematics",
-      },
-      {
-        step: "2. Choose University",
-        description:
-          "Options include Tribhuvan University (IOE), Kathmandu University (KU), Pokhara University, Purbanchal University",
-        notes: "Each has its own entrance and intake system",
-      },
-      {
-        step: "3. Register for Entrance Exam",
-        description: "Apply for IOE Entrance (Tribhuvan) or KUCAT (Kathmandu)",
-        notes: "Online registration via university portals",
-      },
-      {
-        step: "4. Pay Application Fee",
-        description:
-          "Typically NPR 1,500–2,000 via bank or digital wallets (eSewa, Khalti, ConnectIPS)",
-        notes: "Keep transaction ID or voucher for upload",
-      },
-      {
-        step: "5. Upload Documents",
-        description: "+2 transcript, photo, citizenship/passport, signature",
-        notes: "Format and size requirements vary by university",
-      },
-      {
-        step: "6. Take Entrance Exam",
-        description:
-          "Computer-based test covering Physics, Chemistry, Mathematics, English",
-        notes: "Held at designated centers like Pulchowk Campus (IOE)",
-      },
-      {
-        step: "7. Attend Counseling / Merit Allocation",
-        description:
-          "Based on entrance rank, choose preferred college and program",
-        notes: "Includes Civil, Computer, Electrical, Mechanical, etc.",
-      },
-      {
-        step: "8. Confirm Admission",
-        description: "Submit documents and pay initial fees",
-        notes: "Receive official admission letter",
-      },
-      {
-        step: "9. Begin Academic Session",
-        description: "Classes typically start in August–September",
-        notes: "Duration: 4 years (8 semesters)",
-      },
-    ],
-    general_graduate_admission_list: [
-      {
-        step: "1. Select Program & University",
-        description:
-          "Choose a Master's or PhD program that aligns with your Bachelor's degree and career goals.",
-        notes: "Research university offerings and faculty.",
-      },
-      {
-        step: "2. Meet Eligibility Criteria",
-        description:
-          "Typically requires a Bachelor's degree with a minimum GPA or percentage, and specific subject prerequisites.",
-        notes: "Some programs may require work experience.",
-      },
-      {
-        step: "3. Prepare for Entrance Exam",
-        description:
-          "Many universities have their own entrance exams for graduate admissions (e.g., KU, TU).",
-        notes:
-          "Prepare for subject-specific tests and possibly general aptitude.",
-      },
-      {
-        step: "4. Gather Documents",
-        description:
-          "Transcripts, mark sheets, provisional certificates, character certificates, passport/citizenship, recent photos, and a strong personal statement/SOP.",
-        notes: "Ensure all documents are attested where required.",
-      },
-      {
-        step: "5. Submit Application",
-        description:
-          "Apply online through the university's portal or by submitting physical forms.",
-        notes: "Pay application fees as per university guidelines.",
-      },
-      {
-        step: "6. Attend Interview (if required)",
-        description:
-          "Some programs may conduct interviews to assess your suitability.",
-        notes:
-          "Prepare to discuss your academic background and research interests.",
-      },
-      {
-        step: "7. Secure Admission",
-        description:
-          "Upon selection, complete the admission formalities and pay the first installment of fees.",
-        notes: "Receive your official admission letter.",
-      },
-      {
-        step: "8. Begin Classes",
-        description:
-          "Academic sessions usually commence in August/September for most graduate programs.",
-        notes: "Orient yourself with university resources.",
-      },
-    ],
-    faq: {
-      mbbs: {
-        q1: "Is NEET-UG mandatory for MBBS admission in Nepal for Indian students?",
-        a1: "Yes, NEET-UG is mandatory for Indian students seeking MBBS admission in Nepalese medical colleges. Your NEET score is valid for 3 years.",
-        q2: "What are the eligibility criteria for MBBS in Nepal?",
-        a2: "You need to complete 10+2 with Physics, Chemistry, and Biology, with a minimum of 50% aggregate in PCB. You must also be at least 17 years old by December 31 of the admission year.",
-      },
-      engineering: {
-        q1: "What are the eligibility requirements for Bachelor's level Engineering in Nepal?",
-        a1: "You must have completed 10+2 Science (Physics, Chemistry, Mathematics) or an equivalent qualification with a minimum of 45-50% marks.",
-        q2: "Which universities offer Engineering programs in Nepal?",
-        a2: "Key options include Tribhuvan University (IOE), Kathmandu University (KU), Pokhara University, and Purbanchal University. Each has its own entrance and intake system.",
-        q3: "What is MECEE-BL, and is it required for Engineering admissions?",
-        a3: "MECEE-BL (Medical Education Common Entrance Examination - Bachelor Level) is primarily for medical education. For Engineering, you'll apply for entrance exams like IOE Entrance (Tribhuvan) or KUCAT (Kathmandu) through university portals.",
-      },
-    },
-  },
-  np: {
-    headings: {
-      intro: "परिचय",
-      home: "गृह",
-      history: "इतिहास",
+      // REMOVED: history: "इतिहास",
+      intro_sub: "परिचय", // New sub-heading for original Intro content
+      history_sub: "इतिहास", // New sub-heading for original History content
       gallery: "ग्यालरी",
       map: "रमौल को नक्सा",
       education_main: "नेपालमा शिक्षा",
@@ -1218,14 +656,14 @@ const translations = {
         "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
       faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)",
     },
-    intro: [
+    intro_content: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
     ],
-    home: [
+    home_content: [
       "भौगोलिक रूपमा, रमौल २६.८०°N ८६.०९°E मा अवस्थित छ र मखानहा, बासबिट्टा, मनपुर, मदार र कमला नदीले घेरिएको छ। यसको जनसंख्या २०,०००-२५,००० बीचमा छ, जसमा मुस्लिम समुदायको बाहुल्यता छ, र स्थानीय रूपमा मिथिला उर्दू नामक एक अद्वितीय बोली बोलिन्छ।",
       "गाउँ पाँच भागमा विभाजित छ: पूरब टोल, उत्तर टोल, पश्चिम टोल, दक्षिण टोल र मंसूरी टोल। रमौल चोक केन्द्रीय केन्द्र हो, जहाँ लोकप्रिय अहमदीया चिया पसल र सामुदायिक प्रार्थनाका लागि ईदगाह मैदानहरू छन्।",
     ],
-    history: [
+    history_content: [
       "पहिले गाउँ विकास समिति अन्तर्गत पर्ने रमौल अहिले सिराहा नगरपालिका वार्ड ३, ४, र ५ मा पर्दछ। यसमा इस्लामिक शिक्षाको समृद्ध परम्परा छ, जसमा छवटा मदरसा, दश मस्जिद, र सरकारी तथा निजी विद्यालयहरू छन्। नजिकै बग्ने कमला नदीले यसको रमणीय र रणनीतिक महत्त्व बढाउँछ।",
     ],
     after12_programs: {
@@ -1256,7 +694,7 @@ const translations = {
         {
           program: "BCA",
           specializations: "कम्प्युटर अनुप्रयोगहरू",
-          job_scope: "वेब डेभलपर, एप डेभलपर, QA टेस्टर",
+          job_scope: "वेब डेभलपर, एप डेभेलपर, QA टेस्टर",
         },
       ],
       commerce: [
@@ -1767,8 +1205,9 @@ function setLanguage(lang) {
 
   const admissionNavToggle = document.getElementById("admission-nav-toggle");
   if (admissionNavToggle) {
-    admissionNavToggle.firstChild.textContent =
-      translations[lang].headings.admission_info_main + " "; // Add space before arrow
+    // Preserve the arrow, update only the text content
+    admissionNavToggle.childNodes[0].nodeValue =
+      translations[lang].headings.admission_info_main + " ";
   }
 
   const navLinkMbbs = document.getElementById("nav-link-mbbs");
@@ -1786,16 +1225,32 @@ function setLanguage(lang) {
     navLinkResidency.textContent =
       translations[lang].headings.nav_link_residency;
 
-  const introHeading = document.getElementById("intro-heading");
-  if (introHeading)
-    introHeading.textContent = translations[lang].headings.intro;
-
+  // Update Home section content and sub-headings
   const homeHeading = document.getElementById("home-heading");
   if (homeHeading) homeHeading.textContent = translations[lang].headings.home;
 
-  const historyHeading = document.getElementById("history-heading");
-  if (historyHeading)
-    historyHeading.textContent = translations[lang].headings.history;
+  const introSubHeading = document.getElementById("intro-sub-heading");
+  if (introSubHeading)
+    introSubHeading.textContent = translations[lang].headings.intro_sub;
+  const introParagraphText = document.getElementById("intro-paragraph-text");
+  if (introParagraphText)
+    introParagraphText.textContent = translations[lang].intro_content[0];
+
+  const homeGeographicText = document.getElementById("home-geographic-text");
+  if (homeGeographicText)
+    homeGeographicText.textContent = translations[lang].home_content[0];
+  const homeDivisionText = document.getElementById("home-division-text");
+  if (homeDivisionText)
+    homeDivisionText.textContent = translations[lang].home_content[1];
+
+  const historySubHeading = document.getElementById("history-sub-heading");
+  if (historySubHeading)
+    historySubHeading.textContent = translations[lang].headings.history_sub;
+  const historyParagraphText = document.getElementById(
+    "history-paragraph-text"
+  );
+  if (historyParagraphText)
+    historyParagraphText.textContent = translations[lang].history_content[0];
 
   const galleryHeading = document.getElementById("gallery-heading");
   if (galleryHeading)
@@ -1916,24 +1371,6 @@ function setLanguage(lang) {
   const faqMainHeading = document.getElementById("faq-main-heading");
   if (faqMainHeading) {
     faqMainHeading.textContent = translations[lang].headings.faq_main;
-  }
-
-  const introParagraph = document.getElementById("intro")?.querySelector("p");
-  if (introParagraph) introParagraph.textContent = translations[lang].intro[0];
-
-  const historyParagraph = document
-    .getElementById("history")
-    ?.querySelector("p");
-  if (historyParagraph)
-    historyParagraph.textContent = translations[lang].history[0];
-
-  const homeParagraphs = document.getElementById("home")?.querySelectorAll("p");
-  if (homeParagraphs) {
-    translations[lang].home.forEach((paragraphText, index) => {
-      if (homeParagraphs[index]) {
-        homeParagraphs[index].textContent = paragraphText;
-      }
-    });
   }
 
   // Populate programs tables
@@ -2115,15 +1552,15 @@ function populateProgramsTable(containerId, data, lang) {
 // Keyboard shortcut: Ctrl + L toggles language
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.key.toLowerCase() === "l") {
-    const introHeading = document.getElementById("intro-heading");
-    if (introHeading) {
-      const currentHeading = introHeading.textContent;
+    const homeHeading = document.getElementById("home-heading"); // Use home-heading as a reference
+    if (homeHeading) {
+      const currentHeading = homeHeading.textContent;
       const currentLang =
-        currentHeading === translations.np.headings.intro ? "np" : "en";
+        currentHeading === translations.np.headings.home ? "np" : "en";
       const nextLang = currentLang === "en" ? "np" : "en";
       setLanguage(nextLang);
     } else {
-      console.warn("intro-heading not found for language toggle shortcut.");
+      console.warn("home-heading not found for language toggle shortcut.");
     }
   }
 });
