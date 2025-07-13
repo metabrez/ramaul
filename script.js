@@ -6,29 +6,25 @@ console.log("--> script.js HAS STARTED EXECUTION.");
 function setupSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent default for all hash links to handle scroll manually
       const targetId = link.getAttribute("href");
-      // Check if it's an admission sub-link
-      const isAdmissionSubLink = link.closest("#admission-dropdown");
 
-      if (isAdmissionSubLink) {
-        e.preventDefault(); // Prevent default if it's a sub-link, to handle scroll and dropdown close
+      // Check if it's a dropdown sub-link
+      const parentDropdown = link.closest(".dropdown-menu");
+
+      if (parentDropdown) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
           // Close the dropdown after clicking a sub-link
-          const admissionDropdown =
-            document.getElementById("admission-dropdown");
-          if (admissionDropdown) {
-            admissionDropdown.classList.remove("active");
-            const toggleArrow = document.querySelector(
-              "#admission-nav-toggle .dropdown-arrow"
-            );
-            if (toggleArrow) toggleArrow.textContent = "▼"; // Reset arrow
-          }
+          parentDropdown.classList.remove("active");
+          // Reset the arrow on the corresponding toggle
+          const toggleArrow =
+            parentDropdown.parentElement.querySelector(".dropdown-arrow");
+          if (toggleArrow) toggleArrow.textContent = "▼";
         }
       } else if (targetId !== "#") {
         // For other regular nav links
-        e.preventDefault();
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
@@ -61,11 +57,10 @@ setInterval(updateDateTime, 1000); // This will keep updating
 const translations = {
   en: {
     headings: {
-      // REMOVED: intro: "Introduction",
-      home: "Home",
-      // REMOVED: history: "History",
-      intro_sub: "Introduction", // New sub-heading for original Intro content
-      history_sub: "History", // New sub-heading for original History content
+      introduction_toggle: "Introduction",
+      brief_intro_full: "Brief Introduction",
+      nav_link_ward_profile: "Ward Profile",
+      ward_profile_heading: "Ward Profile",
       gallery: "Gallery",
       map: "Map of Ramaul",
       education_main: "Education in Nepal",
@@ -89,17 +84,31 @@ const translations = {
       residency_admission_sub: "Residency Admission in the USA",
       faq_main: "Frequently Asked Questions (FAQs)",
     },
-    // The content for original intro and history is now directly accessed from specific IDs within 'home'
-    intro_content: [
+    brief_introduction_full_content: [
       "Ramaul is a lively village in Siraha Municipality, located in the Madhesh Province of southeastern Nepal. Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy access to goods from both the border and Siraha Bazaar.",
-    ],
-    home_content: [
-      // Combined all home related content here for clarity
-      "Geographically, Ramaul lies at 26.80°N 86.09°E and is surrounded by Makhanaha, Basbitta, Manpur, Madar, and the Kamala River. The population ranges between 20,000–25,000, predominantly Muslim, with a unique dialect called Mithila Urdu spoken locally.",
-      "The village is divided into five areas: Purab Tola, Uttar Tola, Paschim Tola, Dakshin Tola, and Mansoori Tola. Ramaul Chowk is the central hub, home to the popular Ahmadiya Tea Shop and Eidgah grounds for community prayers.",
-    ],
-    history_content: [
+      "Geographically, Ramaul lies at 26.80°N 86.09°E and is surrounded by Makhanaha, Basbitta, Manpur, Madar, and the Kamala River. The population ranges between 20,000–25,000, predominantly Muslim, with a unique dialect called Mithila Urdu spoken locally. The village is divided into five areas: Purab Tola, Uttar Tola, Paschim Tola, Dakshin Tola, and Mansoori Tola. Ramaul Chowk is the central hub, home to the popular Ahmadiya Tea Shop and Eidgah grounds for community prayers.",
       "Previously part of the Village Development Committee, Ramaul now falls under Siraha Municipality Wards 3, 4, and 5. It has a rich tradition of Islamic education with six madrasahs, ten mosques, and both government and private schools. The Kamala River flowing nearby adds to its scenic and strategic significance.",
+    ],
+    // UPDATED: Ward Profile data now contains multiple rows from the image.
+    ward_profile_data: [
+      {
+        "WARD NO.": "4",
+        "WARD CHAIRPERSON": "Md. Shamsad",
+        "WARD SECRETARY": "Indira Kumari Yadav",
+        POPULATION: "4949",
+      },
+      {
+        "WARD NO.": "3",
+        "WARD CHAIRPERSON": "Pradeep Kumar Mandal",
+        "WARD SECRETARY": "Ram babu Morbaita",
+        POPULATION: "2168",
+      },
+      {
+        "WARD NO.": "5",
+        "WARD CHAIRPERSON": "Jagdeswar Yadav",
+        "WARD SECRETARY": "Om Prakash Yadav",
+        POPULATION: "2128",
+      },
     ],
     after12_programs: {
       science: [
@@ -626,11 +635,10 @@ const translations = {
   },
   np: {
     headings: {
-      // REMOVED: intro: "परिचय",
-      home: "गृह",
-      // REMOVED: history: "इतिहास",
-      intro_sub: "परिचय", // New sub-heading for original Intro content
-      history_sub: "इतिहास", // New sub-heading for original History content
+      introduction_toggle: "परिचय",
+      brief_intro_full: "संक्षिप्त परिचय",
+      nav_link_ward_profile: "वडा प्रोफाइल",
+      ward_profile_heading: "वडा प्रोफाइल",
       gallery: "ग्यालरी",
       map: "रमौल को नक्सा",
       education_main: "नेपालमा शिक्षा",
@@ -656,15 +664,31 @@ const translations = {
         "संयुक्त राज्य अमेरिकामा रेसिडेन्सी प्रवेश पाउनका लागि चरणहरू",
       faq_main: "बारम्बार सोधिने प्रश्नहरू (FAQs)",
     },
-    intro_content: [
+    brief_introduction_full_content: [
       "रमौल दक्षिणपूर्वी नेपालको मधेश प्रदेशको सिराहा नगरपालिका अन्तर्गतको एक जीवन्त गाउँ हो। आफ्नो सांस्कृतिक समृद्धि र सामुदायिक भावनाका लागि परिचित रमौल गाउँभन्दा बढी सहरजस्तो छ, जहाँ सीमा र सिराहा बजार दुवैबाट सामानहरू सजिलै प्राप्त गर्न सकिन्छ।",
-    ],
-    home_content: [
-      "भौगोलिक रूपमा, रमौल २६.८०°N ८६.०९°E मा अवस्थित छ र मखानहा, बासबिट्टा, मनपुर, मदार र कमला नदीले घेरिएको छ। यसको जनसंख्या २०,०००-२५,००० बीचमा छ, जसमा मुस्लिम समुदायको बाहुल्यता छ, र स्थानीय रूपमा मिथिला उर्दू नामक एक अद्वितीय बोली बोलिन्छ।",
-      "गाउँ पाँच भागमा विभाजित छ: पूरब टोल, उत्तर टोल, पश्चिम टोल, दक्षिण टोल र मंसूरी टोल। रमौल चोक केन्द्रीय केन्द्र हो, जहाँ लोकप्रिय अहमदीया चिया पसल र सामुदायिक प्रार्थनाका लागि ईदगाह मैदानहरू छन्।",
-    ],
-    history_content: [
+      "भौगोलिक रूपमा, रमौल २६.८०°N ८६.०९°E मा अवस्थित छ र मखानहा, बासबिट्टा, मनपुर, मदार र कमला नदीले घेरिएको छ। यसको जनसंख्या २०,०००-२५,००० बीचमा छ, जसमा मुस्लिम समुदायको बाहुल्यता छ, र स्थानीय रूपमा मिथिला उर्दू नामक एक अद्वितीय बोली बोलिन्छ। गाउँ पाँच भागमा विभाजित छ: पूरब टोल, उत्तर टोल, पश्चिम टोल, दक्षिण टोल र मंसूरी टोल। रमौल चोक केन्द्रीय केन्द्र हो, जहाँ लोकप्रिय अहमदीया चिया पसल र सामुदायिक प्रार्थनाका लागि ईदगाह मैदानहरू छन्।",
       "पहिले गाउँ विकास समिति अन्तर्गत पर्ने रमौल अहिले सिराहा नगरपालिका वार्ड ३, ४, र ५ मा पर्दछ। यसमा इस्लामिक शिक्षाको समृद्ध परम्परा छ, जसमा छवटा मदरसा, दश मस्जिद, र सरकारी तथा निजी विद्यालयहरू छन्। नजिकै बग्ने कमला नदीले यसको रमणीय र रणनीतिक महत्त्व बढाउँछ।",
+    ],
+    // UPDATED: Nepali Ward Profile data now contains multiple rows from the image.
+    ward_profile_data: [
+      {
+        "WARD NO.": "४",
+        "WARD CHAIRPERSON": "मो. शमशाद",
+        "WARD SECRETARY": "इन्दिरा कुमारी यादव",
+        POPULATION: "४९४९",
+      },
+      {
+        "WARD NO.": "३",
+        "WARD CHAIRPERSON": "प्रदीप कुमार मण्डल",
+        "WARD SECRETARY": "राम बाबु मोरबैता",
+        POPULATION: "२१६८",
+      },
+      {
+        "WARD NO.": "५",
+        "WARD CHAIRPERSON": "जगदेश्वर यादव",
+        "WARD SECRETARY": "ओम प्रकाश यादव",
+        POPULATION: "२१२८",
+      },
     ],
     after12_programs: {
       science: [
@@ -1197,6 +1221,22 @@ const translations = {
 
 function setLanguage(lang) {
   // Update main navigation links
+  const introNavToggle = document.getElementById("introduction-nav-toggle");
+  if (introNavToggle) {
+    introNavToggle.childNodes[0].nodeValue =
+      translations[lang].headings.introduction_toggle + " ";
+  }
+  const navLinkBriefIntro = document.getElementById("nav-link-brief-intro");
+  if (navLinkBriefIntro) {
+    navLinkBriefIntro.textContent =
+      translations[lang].headings.brief_intro_full;
+  }
+  const navLinkWardProfile = document.getElementById("nav-link-ward-profile");
+  if (navLinkWardProfile) {
+    navLinkWardProfile.textContent =
+      translations[lang].headings.nav_link_ward_profile;
+  }
+
   const navLinkEducation = document.querySelector(
     'nav ul li a[href="#education"]'
   );
@@ -1205,7 +1245,6 @@ function setLanguage(lang) {
 
   const admissionNavToggle = document.getElementById("admission-nav-toggle");
   if (admissionNavToggle) {
-    // Preserve the arrow, update only the text content
     admissionNavToggle.childNodes[0].nodeValue =
       translations[lang].headings.admission_info_main + " ";
   }
@@ -1225,32 +1264,33 @@ function setLanguage(lang) {
     navLinkResidency.textContent =
       translations[lang].headings.nav_link_residency;
 
-  // Update Home section content and sub-headings
-  const homeHeading = document.getElementById("home-heading");
-  if (homeHeading) homeHeading.textContent = translations[lang].headings.home;
+  // Populate the Brief Introduction section
+  const briefIntroHeading = document.getElementById("brief-intro-heading");
+  if (briefIntroHeading) {
+    briefIntroHeading.textContent =
+      translations[lang].headings.brief_intro_full;
+  }
+  const briefIntroContainer = document.getElementById("brief-intro-content");
+  if (briefIntroContainer) {
+    briefIntroContainer.innerHTML = ""; // Clear previous content
+    const contentArray = translations[lang].brief_introduction_full_content;
+    contentArray.forEach((text) => {
+      const p = document.createElement("p");
+      p.textContent = text;
+      briefIntroContainer.appendChild(p);
+    });
+  }
 
-  const introSubHeading = document.getElementById("intro-sub-heading");
-  if (introSubHeading)
-    introSubHeading.textContent = translations[lang].headings.intro_sub;
-  const introParagraphText = document.getElementById("intro-paragraph-text");
-  if (introParagraphText)
-    introParagraphText.textContent = translations[lang].intro_content[0];
-
-  const homeGeographicText = document.getElementById("home-geographic-text");
-  if (homeGeographicText)
-    homeGeographicText.textContent = translations[lang].home_content[0];
-  const homeDivisionText = document.getElementById("home-division-text");
-  if (homeDivisionText)
-    homeDivisionText.textContent = translations[lang].home_content[1];
-
-  const historySubHeading = document.getElementById("history-sub-heading");
-  if (historySubHeading)
-    historySubHeading.textContent = translations[lang].headings.history_sub;
-  const historyParagraphText = document.getElementById(
-    "history-paragraph-text"
+  const wardProfileHeading = document.getElementById("ward-profile-heading");
+  if (wardProfileHeading) {
+    wardProfileHeading.textContent =
+      translations[lang].headings.ward_profile_heading;
+  }
+  populateProgramsTable(
+    "ward-profile-table-container",
+    translations[lang].ward_profile_data,
+    lang
   );
-  if (historyParagraphText)
-    historyParagraphText.textContent = translations[lang].history_content[0];
 
   const galleryHeading = document.getElementById("gallery-heading");
   if (galleryHeading)
@@ -1495,7 +1535,13 @@ function populateProgramsTable(containerId, data, lang) {
 
   // Determine headers dynamically based on the first item's keys
   const firstItemKeys = Object.keys(data[0]);
+
+  // UPDATED: The header map now includes translations for the new Ward Profile table headers.
   const headerMap = {
+    "WARD NO.": { en: "WARD NO.", np: "वडा नं." },
+    "WARD CHAIRPERSON": { en: "WARD CHAIRPERSON", np: "वडा अध्यक्ष" },
+    "WARD SECRETARY": { en: "WARD SECRETARY", np: "वडा सचिव" },
+    POPULATION: { en: "POPULATION", np: "जनसंख्या" },
     program: { en: "Program", np: "कार्यक्रम" },
     specializations: { en: "Specializations", np: "विशेषज्ञताहरू" },
     job_scope: { en: "Job Scope", np: "रोजगार क्षेत्र" },
@@ -1552,15 +1598,19 @@ function populateProgramsTable(containerId, data, lang) {
 // Keyboard shortcut: Ctrl + L toggles language
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.key.toLowerCase() === "l") {
-    const homeHeading = document.getElementById("home-heading"); // Use home-heading as a reference
-    if (homeHeading) {
-      const currentHeading = homeHeading.textContent;
+    // Use a reliable element that's always present
+    const toggleButton = document.getElementById("btn-en");
+    if (toggleButton) {
+      // A simple way to check current language is to check a translated element's content
+      const briefIntroHeading = document.getElementById(
+        "brief-intro-heading"
+      ).textContent;
       const currentLang =
-        currentHeading === translations.np.headings.home ? "np" : "en";
+        briefIntroHeading === translations.np.headings.brief_intro_full
+          ? "np"
+          : "en";
       const nextLang = currentLang === "en" ? "np" : "en";
       setLanguage(nextLang);
-    } else {
-      console.warn("home-heading not found for language toggle shortcut.");
     }
   }
 });
@@ -1601,37 +1651,70 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   console.log("Language button event listeners set.");
 
+  // Logic for the Introduction dropdown
+  const introductionNavToggle = document.getElementById(
+    "introduction-nav-toggle"
+  );
+  const introductionDropdown = document.getElementById("introduction-dropdown");
+  const introDropdownArrow = introductionNavToggle
+    ? introductionNavToggle.querySelector(".dropdown-arrow")
+    : null;
+
+  if (introductionNavToggle && introductionDropdown && introDropdownArrow) {
+    introductionNavToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      introductionDropdown.classList.toggle("active");
+      introDropdownArrow.textContent = introductionDropdown.classList.contains(
+        "active"
+      )
+        ? "▲"
+        : "▼";
+    });
+  } else {
+    console.warn("Introduction navigation toggle elements not found.");
+  }
+
   // ADMISSION INFORMATION DROPDOWN LOGIC
   const admissionNavToggle = document.getElementById("admission-nav-toggle");
   const admissionDropdown = document.getElementById("admission-dropdown");
-  const dropdownArrow = admissionNavToggle
+  const admissionDropdownArrow = admissionNavToggle
     ? admissionNavToggle.querySelector(".dropdown-arrow")
     : null;
 
-  if (admissionNavToggle && admissionDropdown && dropdownArrow) {
+  if (admissionNavToggle && admissionDropdown && admissionDropdownArrow) {
     admissionNavToggle.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent default link behavior
+      e.preventDefault();
       admissionDropdown.classList.toggle("active");
-      if (admissionDropdown.classList.contains("active")) {
-        dropdownArrow.textContent = "▲"; // Change to up arrow
-      } else {
-        dropdownArrow.textContent = "▼"; // Change to down arrow
-      }
-    });
-
-    // Close dropdown if clicked outside
-    document.addEventListener("click", (e) => {
-      if (
-        !admissionNavToggle.contains(e.target) &&
-        !admissionDropdown.contains(e.target)
-      ) {
-        admissionDropdown.classList.remove("active");
-        if (dropdownArrow) dropdownArrow.textContent = "▼";
-      }
+      admissionDropdownArrow.textContent = admissionDropdown.classList.contains(
+        "active"
+      )
+        ? "▲"
+        : "▼";
     });
   } else {
     console.warn("Admission navigation toggle elements not found.");
   }
+
+  // Close ANY dropdown if clicked outside
+  document.addEventListener("click", (e) => {
+    // Function to check if the click is outside a given dropdown and its toggle
+    const isClickOutside = (toggle, dropdown) => {
+      if (!toggle || !dropdown) return false;
+      return !toggle.contains(e.target) && !dropdown.contains(e.target);
+    };
+
+    // Check and close Introduction dropdown
+    if (isClickOutside(introductionNavToggle, introductionDropdown)) {
+      introductionDropdown.classList.remove("active");
+      if (introDropdownArrow) introDropdownArrow.textContent = "▼";
+    }
+
+    // Check and close Admission dropdown
+    if (isClickOutside(admissionNavToggle, admissionDropdown)) {
+      admissionDropdown.classList.remove("active");
+      if (admissionDropdownArrow) admissionDropdownArrow.textContent = "▼";
+    }
+  });
 
   // Set up smooth scroll for ALL anchor links after DOM is ready
   setupSmoothScroll();

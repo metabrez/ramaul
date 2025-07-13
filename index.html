@@ -22,7 +22,14 @@
         <h1>Ramaul - A Cultural Gem of Nepal</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li>
+                    <a href="#" id="introduction-nav-toggle">Introduction <span class="dropdown-arrow">▼</span></a>
+                    <ul id="introduction-dropdown" class="dropdown-menu">
+                        <li><a href="#introduction-section" id="nav-link-brief-intro">Brief Introduction</a></li>
+
+                        <li><a href="#ward-profile-section" id="nav-link-ward-profile">Ward Profile</a></li>
+                    </ul>
+                </li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#education">Education</a></li>
                 <li>
@@ -41,31 +48,17 @@
     </header>
 
     <main>
-        <section id="home">
-            <h2 id="home-heading">Home</h2>
-
-            <h3 id="intro-sub-heading">Introduction</h3>
-            <p id="intro-paragraph-text">Ramaul is a lively village in Siraha Municipality, located in the Madhesh
-                Province of southeastern Nepal.
-                Known for its cultural richness and community spirit, Ramaul is more of a town than a village, with easy
-                access to goods from both the border and Siraha Bazaar.</p>
-
-            <p id="home-geographic-text">Geographically, Ramaul lies at 26.80°N 86.09°E and is surrounded by Makhanaha,
-                Basbitta, Manpur, Madar,
-                and the Kamala River. The population ranges between 20,000–25,000, predominantly Muslim, with a unique
-                dialect called Mithila Urdu spoken locally.</p>
-            <p id="home-division-text">The village is divided into five areas: Purab Tola, Uttar Tola, Paschim Tola,
-                Dakshin Tola, and Mansoori
-                Tola. Ramaul Chowk is the central hub, home to the popular Ahmadiya Tea Shop and Eidgah grounds for
-                community prayers.</p>
-
-            <h3 id="history-sub-heading">History</h3>
-            <p id="history-paragraph-text">Previously part of the Village Development Committee, Ramaul now falls under
-                Siraha Municipality Wards 3,
-                4, and 5. It has a rich tradition of Islamic education with six madrasahs, ten mosques, and both
-                government and private schools. The Kamala River flowing nearby adds to its scenic and strategic
-                significance.</p>
+        <section id="introduction-section">
+            <h2 id="brief-intro-heading">Brief Introduction</h2>
+            <div id="brief-intro-content"></div>
         </section>
+
+
+        <section id="ward-profile-section" class="education-subsection">
+            <h2 id="ward-profile-heading">Ward Profile</h2>
+            <div id="ward-profile-table-container"></div>
+        </section>
+
         <section id="gallery">
             <h2 id="gallery-heading">Gallery</h2>
             <div class="gallery">
@@ -190,6 +183,20 @@
                 </div>
             </div>
         </section>
+        <table>
+           <tr>
+            <th>Ward No</th>
+            <th>Ward Chairperson</th>
+            <th>Ward Secretary</th>
+            <th>Population</th>
+           </tr>
+            <tr>
+                <td>1</td>
+                <td>Mohammad Shamsul Haque</td>
+                <td>Mohammad Shamsul Haque</td>
+                <td>2,500</td>
+            </tr>
+        </table>
 
     </main>
 
