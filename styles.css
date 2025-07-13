@@ -128,10 +128,12 @@ section {
     /* Center images */
 }
 
+/* UPDATED: Set a fixed width on the figure to create a medium-sized gallery item */
 .gallery figure {
     text-align: center;
     margin: 0;
     /* Reset margin from figure default */
+    width: 300px;
 }
 
 .gallery img {
